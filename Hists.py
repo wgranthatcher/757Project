@@ -415,7 +415,7 @@ plt.show()
 '''
 
 #booleans --> Error
-
+'''
 plt.figure(figsize=(8,6))
 ax = police.body_camera.astype(int).plot.kde()
 ax.set_xlabel("body_camera",fontsize=20)
@@ -431,7 +431,7 @@ ax.set_xlabel("signs_of_mental_illness",fontsize=20)
 ax.set_ylabel("",fontsize=20)
 ax.set_title("",fontsize=20)
 plt.show()
-
+'''
 
 
 #quantiles
@@ -490,7 +490,7 @@ plt.show()
 '''
 
 #Min-Max Normalization
-
+'''
 mmnorm_mpg = (cars.mpg-cars.mpg.min())/(cars.mpg.max()-cars.mpg.min())
 
 mmnorm_displacement = (cars.displacement-cars.displacement.min())/(cars.displacement.max()-cars.displacement.min())
@@ -500,6 +500,7 @@ mmnorm_acceleration = (cars.acceleration-cars.acceleration.min())/(cars.accelera
 mmnorm_horsepower = (cars.horsepower-cars.horsepower.min())/(cars.horsepower.max()-cars.horsepower.min())
 
 mmnorm_weight = (cars.weight-cars.weight.min())/(cars.weight.max()-cars.weight.min())
+'''
 
 '''
 plt.hist(mmnorm_mpg, bins=int(mmnorm_mpg.max()-mmnorm_mpg.min()))
@@ -534,7 +535,7 @@ plt.show()
 '''
 
 #Z-score Normalization
-
+'''
 zscore_mpg = (cars.mpg-cars.mpg.mean())/cars.mpg.std()
 
 zscore_displacement = (cars.displacement-cars.displacement.mean())/cars.displacement.std()
@@ -544,6 +545,7 @@ zscore_acceleration = (cars.acceleration-cars.acceleration.mean())/cars.accelera
 zscore_horsepower = (cars.horsepower-cars.horsepower.mean())/cars.horsepower.std()
 
 zscore_weight = (cars.weight-cars.weight.mean())/cars.weight.std()
+'''
 
 '''
 plt.hist(zscore_mpg, bins=int(zscore_mpg.max()-zscore_mpg.min()))
@@ -578,6 +580,7 @@ plt.show()
 '''
 
 #Natural Log Transformation
+'''
 natlog_mpg = np.log(cars.mpg)
 
 natlog_displacement = np.log(cars.displacement)
@@ -587,6 +590,7 @@ natlog_acceleration = np.log(cars.acceleration)
 natlog_horsepower = np.log(cars.horsepower)
 
 natlog_weight = np.log(cars.weight)
+'''
 
 '''
 plt.hist(natlog_mpg, #bins=int(zscore_mpg.max()-zscore_mpg.min()))
@@ -622,6 +626,7 @@ plt.show()
 '''
 
 #Inverse Square Root Transformation
+'''
 invsqrt_mpg = 1/np.sqrt(cars.mpg)
 
 invsqrt_displacement = 1/np.sqrt(cars.displacement)
@@ -631,6 +636,7 @@ invsqrt_acceleration = 1/np.sqrt(cars.acceleration)
 invsqrt_horsepower = 1/np.sqrt(cars.horsepower)
 
 invsqrt_weight = 1/np.sqrt(cars.weight)
+'''
 
 '''
 plt.hist(invsqrt_mpg, #bins=int(zscore_mpg.max()-zscore_mpg.min()))
@@ -666,6 +672,7 @@ plt.show()
 '''
 
 #Square Root Transformation
+'''
 sqrt_mpg = np.sqrt(cars.mpg)
 
 sqrt_displacement = np.sqrt(cars.displacement)
@@ -675,6 +682,7 @@ sqrt_acceleration = np.sqrt(cars.acceleration)
 sqrt_horsepower = np.sqrt(cars.horsepower)
 
 sqrt_weight = np.sqrt(cars.weight)
+'''
 
 '''
 plt.hist(sqrt_mpg, #bins=int(zscore_mpg.max()-zscore_mpg.min()))
@@ -710,6 +718,7 @@ plt.show()
 '''
 
 #Calculate Skewness
+'''
 ln_skew_weight =(3*(np.mean(natlog_weight)-np.median(natlog_weight)))/np.std(natlog_weight)
 zscore_weight_skew = (3*(np.mean(zscore_weight)-np.median(zscore_weight)))/np.std(zscore_weight)
 print("Swekness: ")
@@ -728,6 +737,7 @@ print(zscore_weight_skew)
 #axarr[1].set_xlabel("Z-score of Weight(lbs)")
 #axarr[1].set_ylabel("Counts")
 #plt.show()
+'''
 
 #Normal Probability Plot 
 '''
@@ -936,7 +946,7 @@ z = pd.Series([2,1,2,3,4,5,6,7,8,9])
 indexed_m = pd.DataFrame(dict(x=x,y=y,z=z)).reset_index()
 '''
 
-
+'''
 #Binning HORSEPOWER
 #Enter the data and call it xdata
 xdata = cars.horsepower
@@ -1032,11 +1042,12 @@ print("Xsorted:", xsorted)
 #plt.scatter(x=xsorted,y=whichbin)
 plt.scatter(x=whichbin,y=xsorted)
 plt.show()
+'''	
 	
 ### CH.3 LAB ###
 	
 
-
+'''
 cars = pd.read_csv("W:\\Documents\\SCHOOL\\Towson\\2018-2022 -- DSc - Computer Security\\6_Fall 2018\\COSC 757 - Data Mining\\Assignments\\Assignment 1 - 9-24\\%s" % file)
 
 print(cars[0:10])
@@ -1079,6 +1090,7 @@ scatter_matrix(wdi[['weight', 'horsepower', 'displacement']],diagonal="kde")
 plt.show()
 
 print("FREEZE!!!")
+'''
 
 #----- Freezes
 '''
@@ -1128,6 +1140,7 @@ pd.crosstab(cars["displacement"],cars["mpg"],normalize="columns").transpose().pl
 plt.show()
 '''
 
+'''
 from scipy import stats
 
 stats.ttest_ind(cars[churn["Churn"]==False]["Intl Calls"],cars[churn["Churn"]==True]["Intl Calls"],equal_var=False)
@@ -1199,3 +1212,4 @@ print("Correlation of MPG and Weight: ", CallsChargeTest)
 
 CallsChargeTest = np.corrcoef(cars["mpg"],cars["acceleration"])
 print("Correlation of Displacement and Acceleration: ", CallsChargeTest)
+'''
