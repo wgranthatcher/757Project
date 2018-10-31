@@ -1,33 +1,12 @@
-#-------------------------------------------------------
-#	
-#	COSC 757 -- DATA MINING
-#	
-#	Assignment 1
-#	
-#	
-#	William Grant Hatcher
-#	
-#	Due: 9/24/2018
-#	
-#	Data Preprocessing and Exploratory Data Analysis (EDA)
-#	
-#-------------------------------------------------------
-
-#python "W:\Documents\SCHOOL\Towson\2018-2022 -- DSc - Computer Security\6_Fall 2018\COSC 757 - Data Mining\Assignments\Classification Competition - 11-1\Assignment1.py"
-
-#file = input("Input File Name:")
-
-### CH.2 LAB ###
-
+import matplotlib
+matplotlib.use('Agg')
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pylab
 import scipy.stats as stats
-import matplotlib
 import seaborn as sns
 matplotlib.style.use('ggplot')
-
 
 #Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
 cover = pd.read_csv('/home/grant309/757Project/Apparel1000.tsv', delimiter="\t")
@@ -151,21 +130,21 @@ plt.show()
 #Histograms (binning = range)
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['customer_id'], color='xkcd:teal')
+ax = sns.distplot(cover['customer_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("customer_id")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_id'], color='xkcd:teal')
+ax = sns.distplot(cover['review_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("review_id")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_id'], color='xkcd:teal')
+ax = sns.distplot(cover['product_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
