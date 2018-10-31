@@ -29,8 +29,8 @@ import seaborn as sns
 matplotlib.style.use('ggplot')
 
 
-#Read Auto-MPG dataset into a Pandas data frame
-cover = pd.read_csv("W:\\Documents\\SCHOOL\\Towson\\2018-2022 -- DSc - Computer Security\\6_Fall 2018\\COSC 757 - Data Mining\\Assignments\\Classification Competition - 11-1\\%s" % file)
+#Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
+cover = pd.read_csv("W:\\Documents\\SCHOOL\\Towson\\2018-2022 -- DSc - Computer Security\\6_Fall 2018\\COSC 757 - Data Mining\\Assignments\\Classification Competition - 11-1\\%s" % file, delimiter="\t")
 
 #Show the data frame
 #print(police)
