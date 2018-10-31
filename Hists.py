@@ -15,7 +15,7 @@
 
 #python "W:\Documents\SCHOOL\Towson\2018-2022 -- DSc - Computer Security\6_Fall 2018\COSC 757 - Data Mining\Assignments\Classification Competition - 11-1\Assignment1.py"
 
-file = input("Input File Name:")
+#file = input("Input File Name:")
 
 ### CH.2 LAB ###
 
@@ -30,7 +30,7 @@ matplotlib.style.use('ggplot')
 
 
 #Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
-cover = pd.read_csv("W:\\Documents\\SCHOOL\\Towson\\2018-2022 -- DSc - Computer Security\\6_Fall 2018\\COSC 757 - Data Mining\\Assignments\\Classification Competition - 11-1\\%s" % file, delimiter="\t")
+cover = pd.read_csv('/home/grant309/757Project/Apparel1000.tsv', delimiter="\t")
 
 #Show the data frame
 #print(police)
