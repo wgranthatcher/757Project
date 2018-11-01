@@ -1,0 +1,44 @@
+ERROR:root:Exception occurred
+Traceback (most recent call last):
+  File "Hists_full.py", line 16, in <module>
+    cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t" #, error_bad_lines=False
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 446, in _read
+    data = parser.read(nrows)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1036, in read
+    ret = self._engine.read(nrows)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1848, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 876, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 945, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 932, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2112, in pandas._libs.parsers.raise_parser_error
+ParserError: Error tokenizing data. C error: Expected 15 fields in line 49396, saw 22
+
+ERROR:root:Exception occurred
+Traceback (most recent call last):
+  File "Hists_full.py", line 17, in <module>
+    cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t" #, error_bad_lines=False
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 446, in _read
+    data = parser.read(nrows)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1036, in read
+    ret = self._engine.read(nrows)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1848, in read
+    data = self._reader.read(nrows)
+  File "pandas/_libs/parsers.pyx", line 876, in pandas._libs.parsers.TextReader.read
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._read_low_memory
+  File "pandas/_libs/parsers.pyx", line 945, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 932, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 2112, in pandas._libs.parsers.raise_parser_error
+ParserError: Error tokenizing data. C error: Expected 15 fields in line 49396, saw 22
+
+WARNING:py.warnings:/home/grant309/.local/lib/python2.7/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+
+WARNING:py.warnings:/home/grant309/.local/lib/python2.7/site-packages/scipy/stats/stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+
