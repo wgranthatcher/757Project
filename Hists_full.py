@@ -141,12 +141,8 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("customer_id")
 
-plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_id'], color='blue')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("review_id")
+#Each has unique Review ID
+#review_id skipped
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['product_id'], color='blue')
@@ -156,71 +152,65 @@ ax.xaxis.label.set_size(20)
 plt.savefig("product_id")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_parent'], color='xkcd:teal')
+ax = sns.distplot(cover['product_parent'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("product_parent")
 
+#Product Title is same as ID (unique to product)
+#Skipped product_title
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_category'], color='xkcd:teal')
+ax = sns.distplot(cover['product_category'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("product_category")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['star_rating'], color='xkcd:teal')
+ax = sns.distplot(cover['star_rating'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("star_rating")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['helpful_votes'], color='xkcd:teal')
+ax = sns.distplot(cover['helpful_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("helpful_votes")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['total_votes'], color='xkcd:teal')
+ax = sns.distplot(cover['total_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("total_votes")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['vine'], color='xkcd:teal')
+ax = sns.distplot(cover['vine'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("vine")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['verified_purchase'], color='xkcd:teal')
+ax = sns.distplot(cover['verified_purchase'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("verified_purchase")
 
-plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_headline'], color='xkcd:teal')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("review_headline")
+#Review Headline should be unique...?
+#skipped review_headline
+
+#Review Body should be unique...?
+#skipped review_body
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_body'], color='xkcd:teal')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("review_body")
-
-plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_date'], color='xkcd:teal')
+ax = sns.distplot(cover['review_date'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
