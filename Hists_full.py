@@ -9,7 +9,7 @@ import seaborn as sns
 matplotlib.style.use('ggplot')
 
 #Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
-cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t")
+cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t", error_bad_lines=False)
 
 #Show the data frame
 #print(police)
