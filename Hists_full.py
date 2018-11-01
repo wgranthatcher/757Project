@@ -132,8 +132,9 @@ plt.show()
 '''
 
 
-#Histograms (binning = range)
+#Histograms
 
+#DISTPLOT for numerical values
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['customer_id'], color='blue')
 ax.yaxis.label.set_size(20)
@@ -144,8 +145,9 @@ plt.savefig("customer_id")
 #Each has unique Review ID
 #review_id skipped
 
+#COUNTPLOT for categoorical values
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_id'], color='blue')
+ax = sns.countplot(cover['product_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -162,7 +164,7 @@ plt.savefig("product_parent")
 #Skipped product_title
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_category'], color='blue')
+ax = sns.countplot(cover['product_category'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
