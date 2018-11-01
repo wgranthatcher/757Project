@@ -142,34 +142,6 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("customer_id")
 
-#Each has unique Review ID
-#review_id skipped
-
-#COUNTPLOT for categoorical values
-plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['product_id'], color='blue')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("product_id")
-
-plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_parent'], color='blue')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("product_parent")
-
-#Product Title is same as ID (unique to product)
-#Skipped product_title
-
-plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['product_category'], color='blue')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("product_category")
-
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['star_rating'], color='blue')
 ax.yaxis.label.set_size(20)
@@ -205,11 +177,12 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("verified_purchase")
 
-#Review Headline should be unique...?
-#skipped review_headline
-
-#Review Body should be unique...?
-#skipped review_body
+plt.figure(figsize=(8,6))
+ax = sns.distplot(cover['product_parent'], color='blue')
+ax.yaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+#plt.show()
+plt.savefig("product_parent")
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['review_date'], color='blue')
@@ -217,6 +190,34 @@ ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("review_date")
+
+#COUNTPLOT for categoorical values
+plt.figure(figsize=(8,6))
+ax = sns.countplot(cover['product_id'], color='blue')
+ax.yaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+#plt.show()
+plt.savefig("product_id")
+
+plt.figure(figsize=(8,6))
+ax = sns.countplot(cover['product_category'], color='blue')
+ax.yaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+#plt.show()
+plt.savefig("product_category")
+
+#Each has unique Review ID
+#review_id skipped
+
+#Product Title is same as ID (unique to product)
+#Skipped product_title
+
+#Review Headline should be unique...?
+#skipped review_headline
+
+#Review Body should be unique...?
+#skipped review_body
+
 
 '''
 #Massive Scatter Matrix!!
