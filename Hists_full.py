@@ -153,6 +153,7 @@ plt.savefig("product_parent")
 
 print("product_parent complete")
 
+'''
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['star_rating'].dropna(), color='blue')
 ax.yaxis.label.set_size(20)
@@ -161,9 +162,21 @@ ax.xaxis.label.set_size(20)
 plt.savefig("star_rating")
 
 print("star_rating complete")
+''' 
+
+#COUNTPLOT for categoorical values
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['helpful_votes'].dropna(), color='blue')
+ax = sns.countplot(cover['star_rating'], color='blue')
+ax.yaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+#plt.show()
+plt.savefig("star_rating")
+
+print("star_rating complete")
+
+plt.figure(figsize=(8,6))
+ax = sns.countplot(cover['helpful_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -172,7 +185,7 @@ plt.savefig("helpful_votes")
 print("helpful_votes complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['total_votes'].dropna(), color='blue')
+ax = sns.countplot(cover['total_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -181,7 +194,7 @@ plt.savefig("total_votes")
 print("total_votes complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['vine'], color='blue')
+ax = sns.countplot(cover['vine'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -190,7 +203,7 @@ plt.savefig("vine")
 print("vine complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['verified_purchase'], color='blue')
+ax = sns.countplot(cover['verified_purchase'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -199,7 +212,7 @@ plt.savefig("verified_purchase")
 print("verified_purchase complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['review_date'], color='blue')
+ax = sns.countplot(cover['review_date'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -207,7 +220,6 @@ plt.savefig("review_date")
 
 print("review_date complete")
 
-#COUNTPLOT for categoorical values
 plt.figure(figsize=(8,6))
 ax = sns.countplot(cover['product_id'], color='blue')
 ax.yaxis.label.set_size(20)
