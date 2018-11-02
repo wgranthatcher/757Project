@@ -145,6 +145,15 @@ plt.savefig("customer_id")
 print("customer_id complete")
 
 plt.figure(figsize=(8,6))
+ax = sns.distplot(cover['product_parent'], color='blue')
+ax.yaxis.label.set_size(20)
+ax.xaxis.label.set_size(20)
+#plt.show()
+plt.savefig("product_parent")
+
+print("product_parent complete")
+
+plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['star_rating'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
@@ -188,15 +197,6 @@ ax.xaxis.label.set_size(20)
 plt.savefig("verified_purchase")
 
 print("verified_purchase complete")
-
-plt.figure(figsize=(8,6))
-ax = sns.distplot(cover['product_parent'], color='blue')
-ax.yaxis.label.set_size(20)
-ax.xaxis.label.set_size(20)
-#plt.show()
-plt.savefig("product_parent")
-
-print("product_parent complete")
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['review_date'], color='blue')
