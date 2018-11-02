@@ -142,12 +142,16 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("customer_id")
 
+print("customer_id complete")
+
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['star_rating'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("star_rating")
+
+print("star_rating complete")
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['helpful_votes'], color='blue')
@@ -156,12 +160,16 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("helpful_votes")
 
+print("helpful_votes complete")
+
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['total_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("total_votes")
+
+print("total_votes complete")
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['vine'], color='blue')
@@ -170,12 +178,16 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("vine")
 
+print("vine complete")
+
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['verified_purchase'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("verified_purchase")
+
+print("verified_purchase complete")
 
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['product_parent'], color='blue')
@@ -184,12 +196,16 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("product_parent")
 
+print("product_parent complete")
+
 plt.figure(figsize=(8,6))
 ax = sns.distplot(cover['review_date'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("review_date")
+
+print("review_date complete")
 
 #COUNTPLOT for categoorical values
 plt.figure(figsize=(8,6))
@@ -199,12 +215,16 @@ ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("product_id")
 
+print("product_id complete")
+
 plt.figure(figsize=(8,6))
 ax = sns.countplot(cover['product_category'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
 plt.savefig("product_category")
+
+print("product_category complete")
 
 #Each has unique Review ID
 #review_id skipped
