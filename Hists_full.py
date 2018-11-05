@@ -1,5 +1,6 @@
 import matplotlib
 matplotlib.use('Agg')
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,14 +10,24 @@ import seaborn as sns
 matplotlib.style.use('ggplot')
 
 
-file = input("Input File Name ending in .tsv:")
+file = raw_input("Input File Name: ")
 
 #Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
 #cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t" , error_bad_lines=False)
-cover = pd.read_csv('/home/grant309/757Project/Data/%s' % file, delimiter="\t" , error_bad_lines=False)
+path = "/home/grant309/757Project/Figures/%s" % file
+print(path)
 
-folder = file[0:-4]
+cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
 
+folder = file
+
+
+try:
+    os.makedirs(path)
+except OSError:
+    print("Could not create path: %s" % path)
+else:
+    print("Path %s created" % path)
 
 #Histograms
 
@@ -26,7 +37,7 @@ ax = sns.distplot(cover['customer_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("Figures/%s/customer_id" % folder)
+plt.savefig("/home/grant309/757Project/Figures/%s/customer_id" % folder)
 
 print("customer_id complete")
 
