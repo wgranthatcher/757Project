@@ -26,7 +26,7 @@ ax = sns.distplot(cover['customer_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/customer_id" % folder)
+plt.savefig("Figures/%s/customer_id" % folder)
 
 print("customer_id complete")
 
@@ -35,7 +35,7 @@ ax = sns.distplot(cover['product_parent'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/product_parent" % folder)
+plt.savefig("Figures/%s/product_parent" % folder)
 
 print("product_parent complete")
 
@@ -57,7 +57,7 @@ ax = sns.countplot(cover['star_rating'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/star_rating" % folder)
+plt.savefig("Figures/%s/star_rating" % folder)
 
 print("star_rating complete")
 
@@ -66,7 +66,7 @@ ax = sns.countplot(cover['helpful_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/helpful_votes" % folder)
+plt.savefig("Figures/%s/helpful_votes" % folder)
 
 print("helpful_votes complete")
 
@@ -75,7 +75,7 @@ ax = sns.countplot(cover['total_votes'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/total_votes" % folder)
+plt.savefig("Figures/%s/total_votes" % folder)
 
 print("total_votes complete")
 
@@ -84,7 +84,7 @@ ax = sns.countplot(cover['vine'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/vine" % folder)
+plt.savefig("Figures/%s/vine" % folder)
 
 print("vine complete")
 
@@ -93,7 +93,7 @@ ax = sns.countplot(cover['verified_purchase'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/verified_purchase" % folder)
+plt.savefig("Figures/%s/verified_purchase" % folder)
 
 print("verified_purchase complete")
 
@@ -102,7 +102,7 @@ ax = sns.countplot(cover['review_date'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/review_date" % folder)
+plt.savefig("Figures/%s/review_date" % folder)
 
 print("review_date complete")
 
@@ -111,7 +111,7 @@ ax = sns.countplot(cover['product_id'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/product_id" % folder)
+plt.savefig("Figures/%s/product_id" % folder)
 
 print("product_id complete")
 
@@ -120,7 +120,7 @@ ax = sns.countplot(cover['product_category'], color='blue')
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
-plt.savefig("%s/product_category" % folder)
+plt.savefig("Figures/%s/product_category" % folder)
 
 print("product_category complete")
 
