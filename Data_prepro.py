@@ -16,11 +16,11 @@ file = raw_input("Input File Name: ")
 #cover = pd.read_csv('W:/Documents/SCHOOL/Towson/2018-2022 -- DSc - Computer Security/6_Fall 2018/COSC 757 - Data Mining/Assignments/Final Project - 12-6/%s' % file, delimiter="\t" , error_bad_lines=False)
 
 #path = "W:/Documents/SCHOOL/Towson/2018-2022 -- DSc - Computer Security/6_Fall 2018/COSC 757 - Data Mining/Assignments/Final Project - 12-6/DataPro/%s" % file
-path = "/home/grant309/757Project/Pro%s" % file
+path = "/home/grant309/757Project/DataPro/%s" % file
 print(path)
 
-#cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
-cover = pd.read_csv('/home/grant309/757Project/%s' % file, delimiter="\t", error_bad_lines=False)
+cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_%s' % file, delimiter="\t" , error_bad_lines=False)
+#cover = pd.read_csv('/home/grant309/757Project/%s' % file, delimiter="\t", error_bad_lines=False)
 
 folder = file
 
@@ -40,14 +40,14 @@ print ('Original Length: ')
 print(len(cover))
 
 for index, row in cover.iterrows():
-    print(row)
+    #print(row)
     if len(row)==15:
         prepro = prepro.append(row)
 
 print('Final Length: ')
 print(prepro)
 
-prepro.to_csv(path, sep='\t')
+prepro.to_csv(path, sep='\t', index=False)
 
 
 	
