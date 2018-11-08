@@ -60,7 +60,7 @@ ax.xaxis.label.set_size(20)
 plt.savefig("star_rating")
 
 print("star_rating complete")
-''' 
+'''
 
 #COUNTPLOT for categoorical values
 
