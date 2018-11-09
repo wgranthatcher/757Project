@@ -18,7 +18,8 @@ file = raw_input("Input File Name: ")
 path = "/home/grant309/757Project/Figures/%s" % file
 print(path)
 
-cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
+#cover = pd.read_csv('/home/grant309/757Prject/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
+cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % file, delimiter="\t", error_bad_lines=False)
 
 folder = file
 

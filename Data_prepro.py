@@ -39,13 +39,50 @@ else:
 print ('Original Length: ')
 print(len(cover))
 
-for index, row in cover.iterrows():
+#for index, row in cover.iterrows():
+#for index, row in cover.itertuples():
     #print(row)
-    if len(row)==15:
-        prepro = prepro.append(row)
+    #if len(row)==15:
+    #    prepro = prepro.append(row)
+
+cover = cover.dropna()
+print(len(cover))
+
+print(cover['star_rating'].dtypes)
+
+cover['star_rating'] = pd.to_numeric(cover['star_rating'], errors='coerce')
+cover = cover.dropna()
+
+#print(cover['star_rating'].dtype)
+
+prepro1 = cover.loc[lambda cover: cover['star_rating'] == 1]
+#prepro.append(prepro1)
+print(prepro1)
+
+prepro2 = cover.loc[lambda cover: cover['star_rating'] == 2]
+#prepro.append(prepro1)
+
+prepro3 = cover.loc[lambda cover: cover['star_rating'] == 3]
+#prepro.append(prepro1)
+
+prepro4 = cover.loc[lambda cover: cover['star_rating'] == 4]
+#prepro.append(prepro1)
+
+prepro5 = cover.loc[lambda cover: cover['star_rating'] == 5]
+#prepro.append(prepro1)
+
+#prepro = prepro1 + prepro2 + prepro3 + prepro4 + prepro5
+
+frames = [prepro1, prepro2, prepro3, prepro4, prepro5]
+prepro = pd.concat(frames)
+
+#print('PREPRO')
+#print(prepro)
+#) or (lambda cover: cover['star_rating'] == 2) (lambda cover: cover['star_rating'] == 3) or (lambda cover: cover['star_rating'] == 4), (lambda cover: cover['star_rating'] == 5)]
+
 
 print('Final Length: ')
-print(prepro)
+print(len(prepro))
 
 prepro.to_csv(path, sep='\t', index=False)
 
