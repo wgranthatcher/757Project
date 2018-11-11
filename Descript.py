@@ -67,25 +67,30 @@ data = ['Apparel_v1_00',
 #path = "/home/grant309/757Project/Figures/%s" % file
 #print(path)
 
+text_file = open('/home/grant309/757Project/Results.txt', "w+")
+text_file.write("RESULTS\n")
+text_file.close()
+
 for cats in data:
     #cover = pd.read_csv('/home/grant309/757Prject/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
     cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
     
-    text_file = open('/home/grant309/757Project/Results.txt', "w+")
-    text_file.write(cats)
-    text_file.write(str(cover.describe()))
+    text_file = open('/home/grant309/757Project/Results.txt', "a")
+    text_file.write(cats + "\n")
+    text_file.write(str(cover.describe()) + "\n")
     
     zero_votes = cover.loc[lambda cover: cover['helpful_votes'] != 0]
     one_votes = cover.loc[lambda cover: cover['helpful_votes'] != 1]
     two_votes = cover.loc[lambda cover: cover['helpful_votes'] != 2]
     
-    text_file.write("Helpfule Votes:  0 = " + str(len(zero_votes)) + " 1 = " + str(len(one_votes)) + " 2 = " + str(len(two_votes)))
+    text_file.write("Helpfule Votes:  0 = " + str(len(zero_votes)) + " 1 = " + str(len(one_votes)) + " 2 = " + str(len(two_votes)) + "\n")
     
     zero_votes = cover.loc[lambda cover: cover['total_votes'] != 0]
     one_votes = cover.loc[lambda cover: cover['total_votes'] != 1]
     two_votes = cover.loc[lambda cover: cover['total_votes'] != 2]
     
-    text_file.write("Helpfule Votes:  0 = " + str(len(zero_votes)) + " 1 = " + str(len(one_votes)) + " 2 = " + str(len(two_votes)))
+    text_file.write("Helpfule Votes:  0 = " + str(len(zero_votes)) + " 1 = " + str(len(one_votes)) + " 2 = " + str(len(two_votes)) + "\n")
+    text_file.write("\n")
     
     print(cats + " Done")
     
