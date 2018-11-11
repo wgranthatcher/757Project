@@ -16,18 +16,19 @@ matplotlib.style.use('ggplot')
 #Read Auto-MPG dataset into a Pandas data frame (mde .tsv  "Tab Seperated Value")
 #cover = pd.read_csv('/home/grant309/757Project/Data/amazon_reviews_us_Apparel_v1_00.tsv', delimiter="\t" , error_bad_lines=False)
 
-data = ['Apparel_v1_00',
+data = [
+'Apparel_v1_00',
 'Automotive_v1_00',
 'Baby_v1_00',
 'Beauty_v1_00',
 'Books_v1_00',
 #'Books_v1_01',
 #'Books_v1_02',
-'Camera_v1_00'#,
+'Camera_v1_00',
 #'Digital_Ebook_Purchase_v1_00',
 #'Digital_Ebook_Purchase_v1_01',
 #'Digital_Music_Purchase_v1_00',
-'Digital_Software_v1_00',
+'Digital_Software_v1_00'#,
 #'Digital_Video_Download_v1_00',
 #'Digital_Video_Games_v1_00',
 #'Electronics_v1_00',
