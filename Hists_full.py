@@ -75,8 +75,10 @@ plt.savefig("/home/grant309/757Project/Figures/%s/star_rating" % folder)
 
 print("star_rating complete")
 
+temp_votes = cover.loc[lambda cover: cover['helpful_votes'] != 0]
+
 plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['helpful_votes'], color=color)
+ax = sns.countplot(temp_votes['helpful_votes'], color=color)
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -84,8 +86,10 @@ plt.savefig("/home/grant309/757Project/Figures/%s/helpful_votes" % folder)
 
 print("helpful_votes complete")
 
+temp_votes = cover.loc[lambda cover: cover['total_votes'] != 0]
+
 plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['total_votes'], color=color)
+ax = sns.countplot(temp_votes['total_votes'], color=color)
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -94,7 +98,7 @@ plt.savefig("/home/grant309/757Project/Figures/%s/total_votes" % folder)
 print("total_votes complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['vine'], color=color)
+ax = sns.countplot(cover['vine'], color=color, order = ["N","Y"])
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -103,7 +107,7 @@ plt.savefig("/home/grant309/757Project/Figures/%s/vine" % folder)
 print("vine complete")
 
 plt.figure(figsize=(8,6))
-ax = sns.countplot(cover['verified_purchase'], color=color)
+ax = sns.countplot(cover['verified_purchase'], color=color, order = ["Y","N"])
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
