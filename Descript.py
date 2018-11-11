@@ -69,7 +69,7 @@ print(path)
 
 for cats in data:
     #cover = pd.read_csv('/home/grant309/757Prject/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
-    cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % file, delimiter="\t", error_bad_lines=False)
+    cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
     
     text_file = open('/home/grant309/757Project/Results.txt', "w+")
     text_file.write(cats)
