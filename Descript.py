@@ -27,7 +27,7 @@ data = ['Apparel_v1_00',
 #'Digital_Ebook_Purchase_v1_00',
 #'Digital_Ebook_Purchase_v1_01',
 #'Digital_Music_Purchase_v1_00',
-#'Digital_Software_v1_00',
+'Digital_Software_v1_00',
 #'Digital_Video_Download_v1_00',
 #'Digital_Video_Games_v1_00',
 #'Electronics_v1_00',
@@ -70,6 +70,8 @@ data = ['Apparel_v1_00',
 text_file = open('/home/grant309/757Project/Results.txt', "w+")
 text_file.write("RESULTS\n")
 text_file.close()
+
+pd.set_option('float_format', '{:f}'.format)
 
 for cats in data:
     #cover = pd.read_csv('/home/grant309/757Prject/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
