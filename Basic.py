@@ -73,7 +73,7 @@ for cats in data:
     
     text_file = open('/home/grant309/757Project/BasicResults.txt', "a+")
     text_file.write(cats + "\n")
-    text_file.write(str(cover.describe()) + "\n")
+    #text_file.write(str(cover.describe()) + "\n")
     
     train=cover.sample(frac=0.7,random_state=1234)
     test=cover.drop(train.index)
