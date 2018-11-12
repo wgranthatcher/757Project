@@ -79,7 +79,7 @@ print("star_rating complete")
 temp_votes = cover#.loc[lambda cover: cover['helpful_votes'] != 0]
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(temp_votes['helpful_votes'], color=color, kde=False, bins=150)
+ax = sns.distplot(temp_votes['helpful_votes'], color=color, hist=False)
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
@@ -90,7 +90,7 @@ print("helpful_votes complete")
 temp_votes = cover#.loc[lambda cover: cover['total_votes'] != 0]
 
 plt.figure(figsize=(8,6))
-ax = sns.distplot(temp_votes['total_votes'], color=color, kde=False, bins=150)
+ax = sns.distplot(temp_votes['total_votes'], color=color, hist=False)
 ax.yaxis.label.set_size(20)
 ax.xaxis.label.set_size(20)
 #plt.show()
