@@ -1,0 +1,218 @@
+\documentclass[10pt, conference, compsocconf]{IEEEtran}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{subeqnarray}
+\usepackage{cases}
+\usepackage{url}
+\usepackage{breakurl}
+%\usepackage[breaklinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{subfig}
+%\usepackage{subcaption}
+%\usepackage{cleveref}
+\usepackage[noabbrev]{cleveref}
+%\usepackage{mwe}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{fixltx2e}
+\pagenumbering{arabic}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage[labelsep=period]{caption}
+%\captionsetup[figure]{margin={1cm,0cm}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\bbf}[1]{\mbox{\boldmath$#1$\unboldmath}}
+\newcommand{\red}[1]{\textcolor{red}{\bf #1}}
+\newcommand{\warn}[1]{}
+%\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+%\renewcommand\thesubfigure{(\alph{subfigure})}
+\def\linespaces{1.0}
+\def\baselinestretch{\linespaces}
+
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+
+
+\begin{document}
+
+\title{Data Mining and Predictive Modeling of Amazon Customer Reviews \\ {\large COSC 757.101 – Data Mining:  Midterm Progress Report}}
+
+\newcommand{\superast}{\raisebox{9pt}{$\ast$}}
+\newcommand{\superdagger}{\raisebox{9pt}{$\dagger$}}
+\newcommand{\superddagger}{\raisebox{9pt}{$\ddagger$}}
+\newcommand{\superS}{\raisebox{9pt}{$\S$}}
+\newcommand{\superP}{\raisebox{9pt}{$\P$}}
+
+\author{\IEEEauthorblockN{W. Grant Hatcher, Kevin McNamara}
+\IEEEauthorblockA{Department of Computer and Information Sciences, Department of Marketing\\ Towson University, Maryland, USA 21252, USA \\Emails:  whatch2@students.towson.edu, kmcnam3@students.towson.edu}}
+
+\maketitle
+
+\begin{abstract}
+In this proposal, we explore a set of Amazon customer reviews to analyze patterns between various attributes and develop a predictive tool for discovered correlated variables. Considering a dataset of over 130 million reviews provided from Amazon's AWS service, we have the potential to consider the impacts of positive and negative reviews on product ratings and customer sentiment. Moreover, applying advanced machine learning systems, such as deep neural networks in TensorFlow, we have the potential to provide high-accuracy predictive capabilities to be leveraged for consumer targeting, increased customer satisfaction, and the generation of additional revenue. 
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+Data mining, Machine learning, Exploratory Data Analysis
+\end{IEEEkeywords}
+
+\section{Introduction}\label{intro}
+
+Since Amazon’s launch in the mid-90’s, their customer base have left hundreds of millions of reviews on purchased items. Through AWS, Amazon has availed over 130 million reviews in TSV files that are organized by product categories. With the 43.5\% market share in 2017, Amazon is the leader in online retail in the US. The tech giant possesses a wealth of data regarding customer purchases, preferences, reviews, and more. Using data mining techniques, we can harness this data to research patterns in customer sentiments and buying habits.
+
+Our initial analysis of the customer review data shows some uniformity across product segments. We are attempting to use the machine learning to predict Star Rating and Helpful Votes for individual product purchase reviews. The distribution of star rating is very similar from category to category. This presents potential challenges in finding a highly-accurate algorithm to predict the star rating. In addition, the helpful vote fields have some regularity as well.
+
+
+\section{Approach}\label{approach}
+
+\subsection{Data Description} 
+
+The dataset we are evaluating is the Amazon Customer Reviews Dataset available from Amazon  Web Services (AWS) cloud. The dataset consists of more than 130 million reviews of Amazon products, separated into 46 subcategories (apparel, books, grocery, jewelry, luggage, etc.), each with over a million reviews. The dataset includes the attributes \textit{customer\_id}, \textit{helpful\_votes}, \textit{marketplace}, \textit{product\_category}, \textit{product\_id}, \textit{product\_parent}, \textit{product\_title}, \textit{review\_body}, \textit{review\_date}, \textit{review\_headline}, \textit{review\_id}, \textit{star\_rating}, \textit{total\_votes}, \textit{verified\_purchase}, and \textit{vine}. More specifically, the field \textit{marketplace} is always “US” for United States, and the field \textit{product\_category} is uniform within each subcategory file (apparel, books, etc.). In addition, \textit{helpful\_votes}, \textit{total\_votes}, and \textit{product\_parent} are integer values, and \textit{review\_date} is a date of format YYYY-MM-DD. The attributes \textit{product\_title}, \textit{review\_body}, and \textit{review\_headline} are all variable-length strings. Finally, \textit{product\_id} and \textit{review\_id} are alphanumeric strings of capital letters and numbers of varying length.
+
+\begin{figure*}[ht]
+	\vspace{-2mm}
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"customer_id".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"product_parent".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"star_rating".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"verified_purchase".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"helpful_votes".png}\\
+	%	\caption{Basic Block Example}
+	
+	%\captionsetup{justification=centering, width=0.9\textwidth}
+	\caption{Histograms and Density Estimation plots of product categories Apparel, Automotive, Baby, Beauty, and Books (left to right). Attributes are \textit{customer\_id}, \textit{product\_parent}, \textit{star\_rating}, \textit{verified\_purchase}, and \textit{helpful\_votes} (top to bottom).}
+	\label{fig1}
+\end{figure*}
+
+\subsection{Accessing the Dataset}
+
+First, we needed to access the data from AWS. This proved to be challenging as the files were quite large in size and were difficult to load in together. With over 130 million reviews, we needed to use a server with enough memory and processing power to load and manipulate such a large set of data. This was accomplished using a Dell PowerEdge R910 server with Intel Xeon E7530 processor and 64GB memory running Ubuntu Linux 16.04.5 LTS. Each data file, in .tsv or tab-separated file format, was downloaded via URL link. The ability to read in these data files was difficult, as most traditional softwares, especially on Windows PCs, could not open the file, and would significantly slow down usage when attempting any edits.
+
+\subsection{Data Preprocessing}
+
+Another challenging aspect of the process was preparing the data for analysis. In such a large dataset the amount of missing data and anomalies is quite substantial, and with individual files on the order of several gigabytes, it is impossible to individually search through the rows of data instances. Getting this data normalized and prepared for the next phase of the process was certainly a challenge. In this phase, it became evident that analyzing the entire dataset (broken up into 43 product category sets in 46 files) would be nearly impossible without careful consideration of programming operations. For instance, simple processes were taking significant amounts of time and some just simply would not work on the entire set even on individual product category segments of data (individual files). As an example, trying to loop even once through several million data items is not feasible. 
+
+To overcome the problem of assessing the dataset, the data was loaded into Python as a DataFrame, where operations can be performed on the entire matrix at once. This includes dropping NaN and missing characters, rows with too many columns, and values that do not match, especially for categorical variables. In this case, we are using Python 2.7. 
+
+\begin{center}
+	\begin{table*}[!]
+		\centering \footnotesize
+		\vspace{0.01cm}
+		\caption{Averages of all seven category data descriptions.}
+		\hspace{1cm}
+		\begin{tabular}{| l | c | c | c | c | c | c | c | c |}
+			\hline
+			\textbf{AVERAGE} & \textbf{customer\_id}	& \textbf{product\_parent}	& \textbf{star\_rating}	& \textbf{helpful\_votes}& 	\textbf{total\_votes} \\ \hline
+			
+			\textit{Count} & 28371981 &	28371981 &	28371981 &	28371981 &	28371981 \\ \hline
+			\textit{Average} & 4053140 &	4053140 &	4053140 &	4053140 &	4053140  \\ \hline
+			\textit{Mean} & 27550919 &	507045022&	4&	2&	2	 \\ \hline
+			\textit{Std. Dev.} & 15383160&	288812824&	1	&19	&20	 \\ \hline
+			\textit{Min} &10043&	31422&	1&	0&	0	\\ \hline
+			\textit{25\% Quartile} & 14223243&	256026516	&4&	0&	0	 \\ \hline
+			\textit{50\% Quartile (Median)} & 	26304429&	518488891&	5&	0&	0	 \\ \hline
+			\textit{75\% Quartile} & 41963264&	760629282&	5&	1&	1	\\ \hline
+			\textit{Max} & 53096535&	999983463&	5&	14679&	14952 \\ \hline
+			%\cellcolor{lightgray} & \cellcolor{lightgray} \\ \hline
+		\end{tabular}\newline
+		\vspace{-0.05cm}
+		\label{Table1}
+	\end{table*} \hfil
+\end{center} %\vspace{-5mm}
+
+\subsection{Exploratory Data Analysis}\label{eda} 
+
+Moving forward into our EDA phase, we limited our data evaluation to a subset of the entire dataset. Thus, we have analyzed and cross-referenced 7 different product category segments. These segments are: Apparel, Automotive, Baby, Beauty, Books (part 1 of 3), Camera, and Digital Software. Grant has successfully loaded and preprocessed the first three segments (Apparel, Automotive, Baby, Beauty, and Books) into his server using PowerShell. Kevin has successfully loaded the 6th and 7th segments (Camera and Digital Software, respectively) into R Studio. Initial EDA details for the Camera and Digital Software segments are shown in Figure~\ref{kev1} and Figure~\ref{kev2}, respectively. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=250pt]{../Figures/"Kevin1".png}\\
+	\vspace{0.04cm}
+	\caption{Data description of Camera category. Includes mean, median, mode, and quantiles of numeric data columns (\textit{star\_rating}, \textit{helpful\_votes}, and \textit{total\_votes}), as well as counts for binary attributes (\textit{vine} and \textit{verified\_purchase}).}
+	\vspace{0.01cm}
+	\label{kev1}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=250pt]{../Figures/"Kevin2".png}\\
+	\vspace{0.04cm}
+	\caption{Data description of Digital Software category. Includes mean, median, mode, and quantiles of numeric data columns (\textit{star\_rating}, \textit{helpful\_votes}, and \textit{total\_votes}), as well as counts for binary attributes (\textit{vine} and \textit{verified\_purchase}).}
+	\vspace{0.01cm}
+	\label{kev2}
+\end{figure}
+
+Looking at the histograms in Figure~\ref{fig1}, we can see near identical distributions of customer id numbers connected to reviews. In addition, we can see that the product parents are also quite uniformly distributed. Moreover, looking at the start ratings of reviews, we see a significant number of five star reviews, much higher than any other rating, and generally exceeding the volume of all other star ratings combined. Traditionally, we see that nearly all reviews are verified purchases, and that the number of helpful votes are generally quite low, with only very few products getting many helpful review votes.
+
+Considering all seven product categories, we can see in Table I the total number of samples considered to be over 28 million, with the average per category being only 4 million. In addition, we see that the vast majority of products have 0 total or helpful votes, with 1 vote being the value of the 75th percentiles. In contrast, we see that the vast majority of reviews have a star rating of 5, with the 25th percentile being a star rating of 4. Note that the attribute \textit{star\_rating} represents a categorical integer of 1 through 5, while \textit{helpful\_votes} and \textit{total\_votes} are unbounded integers. 
+
+\subsection{Shallow Learning}
+
+Now that our EDA phase is complete we have initiated steps to apply some basic machine learning techniques (decision trees, logistic regression, etc.) to fit our data. However, this process is ongoing and not complete as of yet. Currently, for categorical prediction, we must consider the input space of all our diverse attributes. Our goal in the short term is to demonstrate class prediction on \textit{star\_rating} based on the remaining information, as well as prediction of \textit{helpful\_votes}, which necessitates regression analysis.
+
+\subsection{Modeling}
+
+As the long-term goal of our project, we are interested in prediction the helpfulness of a review based on natural language analysis. This requires natural language model building and sentiment analysis of the \textit{review\_headline}, \textit{review\_body}, and \textit{product\_title} attributes before integration with our more basic predictive models for \textit{helpful\_votes} and \textit{star\_rating}. To accomplish this, we hope to build a sentiment analysis neural network or use some other existing framework. If necessary, we shall implement parts of pre-built models.
+
+\section{Literature Review}
+
+In this section we review some relevant works to our current research project. Specifically, Diaz and Ng \cite{ocampo} provided an overview of relevant works on making predictions of helpful reviews. They stress the importance of context in understand the reviews. Also, they mention a lack of uniformity among approaches for predicting helpfulness which hindered their ability to compare methods. That being said, the authors specifically mention a few advance models such as probabilistic matrix factorization and HMM-LDA as well as neural networks as exciting prospects for predicting customer reviews.
+
+In addition, Martin \cite{master} in her 2017 unpublished masters thesis explored review text analysis in predicting review ratings. She cites differing user standards as a major hindrance to this method along with anecdotal information and differing vocabulary that users may use. Martin looked at two different Amazon datasets from distinct categories and first used binary classification to predict a “high” or “low” rating. In addition, the author attempted to find a more exact prediction using multi-class classification and logistic regression. Also, she trained and tested Naive Bayes, SVM, and Random Forest classifiers. Martin found SVM and Naive Bayes to be the most successful classifiers but noted that the binary classification also performed quite well for the other product category. Her conclusions were mixed due to differing results across product categories.
+
+Finally, Park \cite{Yoon} analyzed aspects of product reviews across five categories and looked at their relevance to review helpfulness. The author then used four mining methods to find the best predictor for each product type. Park found that product differences mean algorithms need to be different across product categories. The author also concluded that the vector regression method was the most accurate predictor for each of the five categories.
+
+\vspace{-0.01cm}
+\section{Conclusion}\label{conclusion}
+\vspace{-0.01cm}
+
+Considering both the EDA and the literature review, we have mush to ponder in developing our long-term goals of sentiment extraction for product review analysis. Indeed, it appears from the dataset, and the star\_reviews that some of the review assessments may be artificially inflated, yet more study is necessary. Conclusions will be made after more work has been done in building and testing the various models. In addition, many of our data attributes are highly skewed, and this must be accounted for. At this stage we cannot make any hard conclusions on predictions, but report that we should have basic machine learning completed in the coming days.
+
+\bibliographystyle{abbrv}
+\vspace{-0.01cm}
+\bibliography{ref}
+
+\end{document}
