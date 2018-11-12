@@ -109,7 +109,9 @@ for cats in data:
         'verified_purchase',
         'vine'
         ]
-
+        
+        print(b)
+        
         obs_bin = obs_bin.remove(b)
 
         labs = cover[b]
