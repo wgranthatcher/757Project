@@ -78,7 +78,7 @@ for cats in data:
     #cover = pd.read_csv('/home/grant309/757Prject/Data/amazon_reviews_us_%s.tsv' % file, delimiter="\t" , error_bad_lines=False)
     cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
     
-    text_file = open('/home/grant309/757Project/Results.txt', "a")
+    text_file = open('/home/grant309/757Project/Results.txt', "a+")
     text_file.write(cats + "\n")
     text_file.write(str(cover.describe()) + "\n")
     
@@ -98,6 +98,7 @@ for cats in data:
     print(cats + " Done")
     
     text_file.close()
+
 
 '''	
 try:
