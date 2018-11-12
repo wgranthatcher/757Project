@@ -78,7 +78,7 @@ for cats in data:
     train=cover.sample(frac=0.7,random_state=1234)
     test=cover.drop(train.index)
     
-    base = ['customer_id',
+    base = [#'customer_id',
     'helpful_votes',
     'product_id',
     'product_parent',
@@ -110,7 +110,7 @@ for cats in data:
         'vine'
         ]
 
-        obs_bin = obs_bin.drop(obs_bin(b))
+        obs_bin = obs_bin.remove(b)
 
         labs = cover[b]
         labs = list(set(labs))
