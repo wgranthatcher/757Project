@@ -154,6 +154,10 @@ for cats in data:
         testCls = testCls.values.ravel()
         #print(list(testCls))
 
+        text_file.write("Class Attribute: ")
+        text_file.write(b)
+        text_file.write("\n")
+
         # ----  K Nearest Neighbor Classification
         text_file.write("---- KNN ----")
         text_file.write("\n")
@@ -210,6 +214,7 @@ for cats in data:
         text_file.write(str(metrics.classification_report(testCls, dt_pred)))
         text_file.write("\n")
         
+        '''
         # ---- Random Forest Classifier
         text_file.write("---- Random Forest ----")
         text_file.write("\n")
@@ -229,6 +234,7 @@ for cats in data:
         text_file.write("\n")
         text_file.write(str(metrics.classification_report(testCls, rf_pred)))
         text_file.write("\n")
+        '''
         
         # ---- Naive Bayes Classifier
         text_file.write("---- Naive Bayes ----")
