@@ -75,7 +75,7 @@ for cats in data:
     lenc = LabelEncoder()
     cover['vine'] = lenc.fit_transform(cover['vine'])
     cover['verified_purchase'] = lenc.fit_transform(cover['verified_purchase'])
-    cover['product_id'] = lenc.fit_trnasform(cover['product_id'])
+    cover['product_id'] = lenc.fit_transform(cover['product_id'])
 
     #print(cover[['vine','verified_purchase']])
     #cover.replace(['Y','N'],['1','0'])
