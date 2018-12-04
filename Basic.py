@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn import tree
 from sklearn.naive_bayes import GaussianNB
+from sklearn.preprocessing import LabelEncoder
 
 data = [
 'Apparel_v1_00'#,
@@ -71,12 +72,23 @@ text_file.close()
 for cats in data:
     cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
     
+    lenc = LabelEncoder()
+    cover['vine'] = lenc.fit_transform(cover['vine'])
+    cover['verified_purchase'] = lenc.fit_transform(cover['verified_purchase'])
+    cover['product_id'] = lenc.fit_trnasform(cover['product_id'])
+
+    #print(cover[['vine','verified_purchase']])
+    #cover.replace(['Y','N'],['1','0'])
+    #print(cover[['vine','verified_purchase']])
+
     text_file = open('/home/grant309/757Project/BasicResults.txt', "a+")
     text_file.write(cats + "\n")
-    #text_file.write(str(cover.describe()) + "\n")
+    text_file.write(str(cover.describe()) + "\n")
     
     train=cover.sample(frac=0.7,random_state=1234)
     test=cover.drop(train.index)
+
+    print(train[['vine','verified_purchase']])
     
     base = [#'customer_id',
     'helpful_votes',
@@ -94,7 +106,9 @@ for cats in data:
     ]
 
     for b in base:
-
+        
+        print("Obs_Bin: ")
+        
         obs_bin = ['customer_id',
         'helpful_votes',
         'product_id',
@@ -110,9 +124,15 @@ for cats in data:
         'vine'
         ]
         
+        print(obs_bin)
+        print(obs_bin.index(b))
+        
+        print("B: ")
         print(b)
         
-        obs_bin = obs_bin.remove(b)
+        obs_bin.remove(str(b))
+        print("Obs_Bin")
+        print(obs_bin)
 
         labs = cover[b]
         labs = list(set(labs))
@@ -120,11 +140,20 @@ for cats in data:
         print(labs)
         
         cls = [str(b)]
-        trainObs = train.as_matrix(obs_bin)
-        trainCls = train.as_matrix(cls).ravel()
-        testObs = test.as_matrix(obs_bin)
-        testCls = test.as_matrix(cls).ravel()
-        
+        #print(list(cls))
+        trainObs = train[obs_bin]
+        trainObs = trainObs.values
+        #print(list(trainObs))
+        trainCls = train[str(b)]
+        trainCls = trainCls.values.ravel()
+        #print(list(testObs))
+        testObs = test[obs_bin]
+        testObs = testObs.values
+        #print(list(trainCls))
+        testCls = test[str(b)]
+        testCls = testCls.values.ravel()
+        #print(list(testCls))
+
         # ----  K Nearest Neighbor Classification
         text_file.write("---- KNN ----")
         text_file.write("\n")
