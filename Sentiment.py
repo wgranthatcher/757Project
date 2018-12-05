@@ -10,6 +10,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 import re
 from sklearn.feature_extraction.text import CountVectorizer
+import string
 
 #List of Data Files - Amazon AWS Review Data
 data = [
@@ -83,9 +84,10 @@ def preprocess_reviews(reviews):
     
     for columns in reviews:
         #print(columns)
-        reviews[columns].apply(lambda x: x.lower())
-        reviews[columns].apply(lambda x: x.translate(None, string.punctuation))
-        reviews[columns].apply(lambda x: x.translate(None, string.digits))
+        reviews[columns] = reviews[columns].apply(lambda x: x.lower())
+        reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.punctuation))
+        reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.digits))
+        
     return reviews
 
 
@@ -118,11 +120,14 @@ for cats in data:
     test=cover.drop(train.index)
 
     # ---- Attempt to vectorize 'HEADLINE' as one-hot binaries
-    print(train[['review_headline']])
+    #print(train[['review_headline']])
 
     train_clean = preprocess_reviews(train[['review_headline']])
     test_clean = preprocess_reviews(test[['review_headline']])
 
+    print("Train_clean: ")
+    print(train_clean)
+    print("Diff: ")
     print(train_clean[['review_headline']])
 
     cv = CountVectorizer(binary=True)
@@ -130,10 +135,15 @@ for cats in data:
     train_bin = cv.transform(train_clean)
     test_bin = cv.transform(test_clean)
 
+    print("Train_bin: ")
     print(train_bin)
+    print(train_bin.todense())
 
-    train = pd.concat([train, train_bin], axis=1)
-    test = pd.concat([test, test_bin], axis=1)
+    bigram_train = pd.DataFrame(train_bin.todense(), index=train.index, columns=cv.get_feature_names())
+    bigram_test = pd.DataFrame(test_bin.todense(), index=test.index, columns=cv.get_feature_names())
+    
+    train = pd.concat([train, bigram_train], axis=1)
+    test = pd.concat([test, bigram_test], axis=1)
 
     print(train)
     # ---- Attemt to vectorize 'HEADLINE' as one-hot binaries
@@ -210,6 +220,7 @@ for cats in data:
         text_file.write(b)
         text_file.write("\n")
 
+        '''
         # ----  K Nearest Neighbor Classification
         text_file.write("---- KNN ----")
         text_file.write("\n")
@@ -245,6 +256,7 @@ for cats in data:
         text_file.write("\n")
         text_file.write(str(metrics.classification_report(testCls, dt_pred)))
         text_file.write("\n")
+        '''
         
         # ---- Decision Tree Entropy Classification
         text_file.write("---- Decision Tree Entropy ----")
@@ -288,6 +300,7 @@ for cats in data:
         text_file.write("\n")
         '''
         
+        '''
         # ---- Naive Bayes Classifier
         text_file.write("---- Naive Bayes ----")
         text_file.write("\n")
@@ -307,7 +320,7 @@ for cats in data:
         text_file.write("\n")
         text_file.write(str(metrics.classification_report(testCls, nb_pred)))
         text_file.write("\n")
-        
+        '''
 
 
     print(cats + " Done")
