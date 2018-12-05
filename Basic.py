@@ -92,7 +92,7 @@ for cats in data:
     
     base = [#'customer_id',
     'helpful_votes',
-    'product_id',
+    #'product_id',
     'product_parent',
     #'product_title',
     #'review_body',
