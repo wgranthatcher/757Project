@@ -10,9 +10,9 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 
 data = [
-'Apparel_v1_00',
-'Automotive_v1_00',
-'Baby_v1_00',
+#'Apparel_v1_00',
+#'Automotive_v1_00',
+#'Baby_v1_00',
 'Beauty_v1_00',
 'Books_v1_00',
 #
