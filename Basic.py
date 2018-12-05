@@ -10,22 +10,22 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 
 data = [
-'Apparel_v1_00'#,
-#'Automotive_v1_00',
-#'Baby_v1_00',
-#'Beauty_v1_00',
-#'Books_v1_00',
+'Apparel_v1_00',
+'Automotive_v1_00',
+'Baby_v1_00',
+'Beauty_v1_00',
+'Books_v1_00',
 #
 #'Books_v1_01',
 #'Books_v1_02',
 #
-#'Camera_v1_00',
+'Camera_v1_00',
 #
 #'Digital_Ebook_Purchase_v1_00',
 #'Digital_Ebook_Purchase_v1_01',
-#'Digital_Music_Purchase_v1_00',
+'Digital_Music_Purchase_v1_00',
 #
-#'Digital_Software_v1_00'#,
+'Digital_Software_v1_00'#,
 #
 #'Digital_Video_Download_v1_00',
 #'Digital_Video_Games_v1_00',
@@ -88,12 +88,12 @@ for cats in data:
     train=cover.sample(frac=0.7,random_state=1234)
     test=cover.drop(train.index)
 
-    print(train[['vine','verified_purchase']])
+    #print(train[['vine','verified_purchase']])
     
     base = [#'customer_id',
     'helpful_votes',
     #'product_id',
-    'product_parent',
+    #'product_parent',
     #'product_title',
     #'review_body',
     #'review_date',
@@ -107,7 +107,7 @@ for cats in data:
 
     for b in base:
         
-        print("Obs_Bin: ")
+        #print("Obs_Bin: ")
         
         obs_bin = ['customer_id',
         'helpful_votes',
@@ -124,20 +124,20 @@ for cats in data:
         'vine'
         ]
         
-        print(obs_bin)
-        print(obs_bin.index(b))
+        #print(obs_bin)
+        #print(obs_bin.index(b))
         
         print("B: ")
         print(b)
         
         obs_bin.remove(str(b))
-        print("Obs_Bin")
-        print(obs_bin)
+        #print("Obs_Bin")
+        #print(obs_bin)
 
         labs = cover[b]
         labs = list(set(labs))
-        print("labs:")
-        print(labs)
+        #print("labs:")
+        #print(labs)
         
         cls = [str(b)]
         #print(list(cls))
