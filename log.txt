@@ -1,93 +1,104 @@
 /home/grant309/.local/lib/python2.7/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
   from numpy.core.umath_tests import inner1d
-Sentiment.py:88: SettingWithCopyWarning: 
+Sentiment1.py:88: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
   reviews[columns] = reviews[columns].apply(lambda x: x.lower())
-Sentiment.py:89: SettingWithCopyWarning: 
+Sentiment1.py:89: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
   reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.punctuation))
-Sentiment.py:90: SettingWithCopyWarning: 
+Sentiment1.py:90: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
   reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.digits))
 Train_clean: 
-         customer_id  product_id  product_parent  ...  yet  you  your
-571349      52619078       74794       115701425  ...    0    0     0
-571051      45474498       85821       851749842  ...    0    0     0
-1856          673898       41745       776917390  ...    0    0     0
-571472      28679401       46843       456247721  ...    0    0     0
-1070282     37081146       55381       524189088  ...    0    0     0
-603291      19702885       45077       383646305  ...    0    0     0
-1120424     46551901      142185       101268890  ...    0    0     0
-1351215     18173996       36589       483688088  ...    0    0     0
-1132023     34969405       25342       884499763  ...    0    0     0
-1035546     49750519       47039       515483263  ...    0    0     0
-393692      37110195         537       872028396  ...    0    0     0
-140910      23706525         537       872028396  ...    0    0     0
-1193069     30312929       93056       816014400  ...    0    0     0
-943085      23248821       60483       656883836  ...    0    0     0
-1015549     12720769      111631       250785626  ...    0    0     0
-1763        29706437      146267       905464613  ...    0    0     0
-519978      11064911      124409       734616398  ...    0    0     0
-1724036     16660612        3086       281335472  ...    0    0     0
-1748102     42089730         386       212948862  ...    0    0     0
-120157      19566380       39711       366156493  ...    0    0     0
-1458166     28032551       41699        50251791  ...    0    0     0
-374326      15371870       47259       531152955  ...    0    0     0
-1037049     14009497      130862       423888528  ...    0    0     0
-113174      46680084       28419        56959563  ...    0    0     0
-1626333     18425387        1860       239489178  ...    0    0     0
-438823      38355589       96598       177777045  ...    0    0     0
-1468083     48210464       29400       342406142  ...    0    0     0
-1071312     22791641       71343       265688328  ...    0    0     0
-39230       25746120      124577       286298157  ...    0    0     0
-318436      24949195       76525       923540564  ...    0    0     0
-...              ...         ...             ...  ...   ..  ...   ...
-921793      32071471      107957        17074518  ...    0    0     0
-969188      23560230      123903       949533206  ...    0    0     0
-95687       35034310       56920       905916714  ...    0    0     0
-754463      49266287       95378       320851549  ...    0    0     0
-1469821     48232881       21040       250517482  ...    0    1     0
-921537      27072775       71924       106405675  ...    0    0     0
-1603487     17419579       36497       839151996  ...    0    0     0
-457155      51568967       10864       201648108  ...    0    0     0
-966403      49211190      107732       171100622  ...    0    0     0
-116721      46874021       38612       588175859  ...    0    0     0
-684784      16323682       24393       517991278  ...    0    0     0
-1011998     13371384      144297       478654663  ...    0    0     0
-1175652     11974621       93599       617061933  ...    0    0     0
-33074       43481723      128183       369806965  ...    0    0     0
-166540      30344289      129921       593605040  ...    0    0     0
-299094      45011051      114352       727011383  ...    0    0     0
-926833      39297561       91692       907990419  ...    0    0     0
-1211684     11760487      127632       962285136  ...    0    0     0
-1560587     46310587         943       325031069  ...    0    0     0
-505869      38435466       69102       991078149  ...    0    0     0
-1381447     47812028       83841       406923594  ...    0    0     0
-633491      48116102       52171       810017229  ...    0    0     0
-478940      17901780       35687       960847715  ...    0    0     0
-615970      13809304       69020       965361701  ...    0    0     0
-785078      47848094       44200       642672393  ...    0    0     0
-628845      50128378       52360       222201488  ...    0    0     0
-988422      25732040       70496       630106451  ...    0    0     0
-1312519     41592713       83842        70476958  ...    0    0     0
-132764      49404753        1742       298437734  ...    0    1     0
-1023470     26141154        9908       249900317  ...    0    0     0
+         customer_id  product_id  product_parent   ...   youre  yr  zipper
+571349      52619078       74794       115701425   ...       0   0       0
+571051      45474498       85821       851749842   ...       0   0       0
+1856          673898       41745       776917390   ...       0   0       0
+571472      28679401       46843       456247721   ...       0   0       0
+1070282     37081146       55381       524189088   ...       0   0       0
+603291      19702885       45077       383646305   ...       0   0       0
+1120424     46551901      142185       101268890   ...       0   0       0
+1351215     18173996       36589       483688088   ...       0   0       0
+1132023     34969405       25342       884499763   ...       0   0       0
+1035546     49750519       47039       515483263   ...       0   0       0
+393692      37110195         537       872028396   ...       0   0       0
+140910      23706525         537       872028396   ...       0   0       0
+1193069     30312929       93056       816014400   ...       0   0       0
+943085      23248821       60483       656883836   ...       0   0       0
+1015549     12720769      111631       250785626   ...       0   0       0
+1763        29706437      146267       905464613   ...       0   0       0
+519978      11064911      124409       734616398   ...       0   0       0
+1724036     16660612        3086       281335472   ...       0   0       0
+1748102     42089730         386       212948862   ...       0   0       0
+120157      19566380       39711       366156493   ...       0   0       0
+1458166     28032551       41699        50251791   ...       0   0       0
+374326      15371870       47259       531152955   ...       0   0       0
+1037049     14009497      130862       423888528   ...       0   0       0
+113174      46680084       28419        56959563   ...       0   0       0
+1626333     18425387        1860       239489178   ...       0   0       0
+438823      38355589       96598       177777045   ...       0   0       0
+1468083     48210464       29400       342406142   ...       0   0       0
+1071312     22791641       71343       265688328   ...       0   0       0
+39230       25746120      124577       286298157   ...       0   0       0
+318436      24949195       76525       923540564   ...       0   0       0
+...              ...         ...             ...   ...     ...  ..     ...
+921793      32071471      107957        17074518   ...       0   0       0
+969188      23560230      123903       949533206   ...       0   0       0
+95687       35034310       56920       905916714   ...       0   0       0
+754463      49266287       95378       320851549   ...       0   0       0
+1469821     48232881       21040       250517482   ...       0   0       0
+921537      27072775       71924       106405675   ...       0   0       0
+1603487     17419579       36497       839151996   ...       0   0       0
+457155      51568967       10864       201648108   ...       0   0       0
+966403      49211190      107732       171100622   ...       0   0       0
+116721      46874021       38612       588175859   ...       0   0       0
+684784      16323682       24393       517991278   ...       0   0       0
+1011998     13371384      144297       478654663   ...       0   0       0
+1175652     11974621       93599       617061933   ...       0   0       0
+33074       43481723      128183       369806965   ...       0   0       0
+166540      30344289      129921       593605040   ...       0   0       0
+299094      45011051      114352       727011383   ...       0   0       0
+926833      39297561       91692       907990419   ...       0   0       0
+1211684     11760487      127632       962285136   ...       0   0       0
+1560587     46310587         943       325031069   ...       0   0       0
+505869      38435466       69102       991078149   ...       0   0       0
+1381447     47812028       83841       406923594   ...       0   0       0
+633491      48116102       52171       810017229   ...       0   0       0
+478940      17901780       35687       960847715   ...       0   0       0
+615970      13809304       69020       965361701   ...       0   0       0
+785078      47848094       44200       642672393   ...       0   0       0
+628845      50128378       52360       222201488   ...       0   0       0
+988422      25732040       70496       630106451   ...       0   0       0
+1312519     41592713       83842        70476958   ...       0   0       0
+132764      49404753        1742       298437734   ...       0   0       0
+1023470     26141154        9908       249900317   ...       0   0       0
 
-[1224264 rows x 511 columns]
-['customer_id', 'product_id', 'product_parent', 'star_rating', 'helpful_votes', 'total_votes', 'vine', 'verified_purchase', u'about', u'absolutely', u'actually', u'addition', u'adorable', u'advertised', u'after', u'again', u'all', u'almost', u'also', u'alternative', u'am', u'amazing', u'an', u'and', u'another', u'any', u'apart', u'are', u'around', u'arrived', u'as', u'assemble', u'at', u'awesome', u'babies', u'baby', u'babys', u'back', u'bad', u'bag', u'bags', u'bath', u'be', u'beautiful', u'because', u'bed', u'bedding', u'been', u'before', u'best', u'better', u'beware', u'bib', u'bibs', u'big', u'bigger', u'bit', u'blanket', u'blankets', u'book', u'booster', u'both', u'bottle', u'bottles', u'bought', u'box', u'boy', u'boys', u'brand', u'breast', u'bright', u'britax', u'broke', u'broken', u'brush', u'but', u'buy', u'buying', u'by', u'came', u'can', u'cant', u'car', u'carrier', u'carseat', u'chair', u'changing', u'cheap', u'child', u'children', u'choice', u'clean', u'cloth', u'color', u'colors', u'come', u'comfortable', u'comfy', u'compact', u'concept', u'convenient', u'cool', u'could', u'couldnt', u'cover', u'crib', u'cup', u'cups', u'customer', u'cute', u'daughter', u'daughters', u'day', u'deal', u'decent', u'definitely', u'described', u'design', u'diaper', u'diapers', u'did', u'didnt', u'different', u'difficult', u'disappointed', u'do', u'does', u'doesnt', u'done', u'dont', u'double', u'down', u'durable', u'easier', u'easily', u'easy', u'effective', u'enough', u'even', u'ever', u'every', u'everything', u'exactly', u'excellent', u'expected', u'expensive', u'extra', u'fabric', u'fantastic', u'far', u'fast', u'favorite', u'feeding', u'feel', u'few', u'finally', u'find', u'fine', u'first', u'fit', u'fits', u'five', u'flimsy', u'food', u'for', u'found', u'four', u'free', u'from', u'fun', u'functional', u'gate', u'get', u'gets', u'gift', u'girl', u'give', u'glad', u'go', u'going', u'good', u'got', u'graco', u'granddaughter', u'grandson', u'great', u'had', u'hands', u'handy', u'happy', u'hard', u'has', u'hate', u'have', u'he', u'head', u'heavy', u'help', u'helpful', u'her', u'high', u'highchair', u'highly', u'his', u'hold', u'holds', u'home', u'horrible', u'how', u'huge', u'idea', u'if', u'im', u'impressed', u'in', u'infant', u'install', u'into', u'is', u'issues', u'it', u'item', u'its', u'ive', u'job', u'junk', u'just', u'keep', u'keeps', u'kid', u'kids', u'know', u'large', u'last', u'leak', u'leaks', u'less', u'life', u'lifesaver', u'light', u'lightweight', u'like', u'liked', u'likes', u'little', u'live', u'long', u'look', u'looking', u'looks', u'lot', u'lots', u'love', u'loved', u'lovely', u'loves', u'made', u'make', u'makes', u'many', u'market', u'mat', u'material', u'mattress', u'me', u'medela', u'milk', u'mind', u'mirror', u'mobile', u'mom', u'moms', u'money', u'monitor', u'month', u'months', u'more', u'most', u'much', u'music', u'must', u'my', u'need', u'needed', u'needs', u'never', u'new', u'newborn', u'newborns', u'nice', u'night', u'nipple', u'no', u'not', u'nothing', u'now', u'nursery', u'nursing', u'of', u'off', u'ok', u'okay', u'old', u'older', u'on', u'one', u'ones', u'only', u'open', u'option', u'or', u'ordered', u'organizer', u'other', u'our', u'out', u'over', u'overall', u'own', u'pacifier', u'pack', u'pad', u'parents', u'parts', u'pay', u'penny', u'perfect', u'perfectly', u'picture', u'piece', u'pillow', u'pink', u'plastic', u'play', u'pleased', u'poor', u'portable', u'potty', u'practical', u'pretty', u'price', u'problem', u'problems', u'product', u'products', u'pump', u'pumping', u'purchase', u'purchased', u'purpose', u'put', u'quality', u'quick', u'quite', u'read', u'really', u'received', u'recommend', u'recommended', u'replacement', u'review', u'reviews', u'right', u'room', u'safe', u'safety', u'same', u'satisfied', u'save/home/grant309/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+[1224264 rows x 1011 columns]
+['customer_id', 'product_id', 'product_parent', 'star_rating', 'helpful_votes', 'total_votes', 'vine', 'verified_purchase', u'able', u'about', u'absolute', u'absolutely', u'absorbent', u'accessory', u'activity', u'actually', u'addition', u'adjustable', u'adorable', u'advertised', u'affordable', u'after', u'again', u'age', u'ago', u'air', u'all', u'almost', u'already', u'also', u'alternative', u'always', u'am', u'amazing', u'amazon', u'an', u'and', u'annoying', u'another', u'any', u'anyone', u'anything', u'apart', u'approved', u'are', u'around', u'arrived', u'as', u'assemble', u'assembly', u'at', u'attractive', u'available', u'avent', u'away', u'awesome', u'awful', u'babies', u'baby', u'babys', u'back', u'backpack', u'bad', u'bag', u'bags', u'ball', u'base', u'basic', u'basket', u'bassinet', u'bath', u'batteries', u'battery', u'be', u'bear', u'beautiful', u'because', u'bed', u'bedding', u'been', u'before', u'being', u'best', u'better', u'between', u'beware', u'bib', u'bibs', u'big', u'bigger', u'bit', u'blanket', u'blankets', u'blue', u'bob', u'book', u'booster', u'boppy', u'born', u'both', u'bother', u'bottle', u'bottles', u'bottom', u'bought', u'bouncer', u'bowl', u'bowls', u'box', u'boy', u'boys', u'bra', u'brand', u'break', u'breaks', u'breast', u'breastfed', u'breastfeeding', u'bright', u'britax', u'broke', u'broken', u'browns', u'brush', u'built', u'bulky', u'bumper', u'burp', u'busy', u'but', u'buy', u'buyer', u'buying', u'by', u'came', u'camera', u'can', u'cannot', u'cant', u'car', u'care', u'careful', u'carrier', u'carry', u'cars', u'carseat', u'case', u'chair', u'change', u'changing', u'charm', u'cheap', u'cheaper', u'cheaply', u'check', u'chew', u'chicco', u'child', u'children', u'childs', u'china', u'choice', u'christmas', u'city', u'classic', u'clean', u'cleaning', u'clear', u'clip', u'close', u'cloth', u'clothes', u'cloths', u'cold', u'color', u'colorful', u'colors', u'come', u'comes', u'comfort', u'comfortable', u'comfy', u'compact', u'company', u'complaints', u'complete', u'completely', u'concept', u'construction', u'convenient', u'convertible', u'cool', u'cost', u'cotton', u'could', u'couldnt', u'couple', u'cover', u'covers', u'cozy', u'cradle', u'crap', u'crazy', u'crib', u'cuddly', u'cup', u'cups', u'customer', u'cute', u'cutest', u'damaged', u'dangerous', u'daughter', u'daughters', u'day', u'daycare', u'days', u'deal', u'decent', u'defective', u'definitely', u'delivery', u'described', u'description', u'design', u'designed', u'diaper', u'diapering', u'diapers', u'did', u'didnt', u'different', u'difficult', u'dirty', u'disappointed', u'disappointing', u'disappointment', u'do', u'does', u'doesnt', u'dog', u'dogs', u'doll', u'done', u'dont', u'door', u'double', u'down', u'dr', u'dream', u'dresser', u'drink', u'dry', u'drying', u'durable', u'during', u'easier', u'easily', u'easy', u'effective', u'eh', u'else', u'enjoy', u'enough', u'entertaining', u'entertainment', u'ergo', u'especially', u'essential', u'even', u'evenflo', u'ever', u'every', u'everyday', u'everyone', u'everything', u'everywhere', u'exactly', u'excellent', u'except', u'expect', u'expectations', u'expected', u'expecting', u'expensive', u'experience', u'extra', u'extremely', u'fabric', u'fabulous', u'facing', u'fall', u'falling', u'falls', u'family', u'fan', u'fantastic', u'far', u'fast', u'favorite', u'feature', u'features', u'feeding', u'feel', u'feels', u'fell', u'few', u'finally', u'find', u'fine', u'firm', u'first', u'fit', u'fits', u'five', u'flat', u'flaw', u'flaws', u'flimsy', u'floor', u'flow', u'fold', u'food', u'for', u'formula', u'found', u'four', u'frame', u'free', u'friend', u'friendly', u'friends', u'from', u'front', u'full', u'fun', u'function', u'functional', u'furniture', u'garbage', u'gate', u'gates', u'gave', u'genie', u'get', u'gets', u'getting', u'gift', u'giraffe', u'girl', u'girls', u'give', u'glad', u'glass', u'glider', u'go', u'goes', u'going', u'good', u'gorgeous', u'got', u'graco', u'grand', u'granddaughter', u'grandson', u'great', u'greatest', u'green', u'guy', u'gym', u'had', u'half', u'hamper', u'hand', u'handle', u'handles', u'hands', u'handy', u'happy', u'hard', u'harness', u'has', u'hate', u'hated', u'have', u'havent', u'having', u'hazard', u'he', u'head', u'heavy', u'height', u'help', u'helped', u'helpful', u'helps', u'her', u'here', u'high', u'highchair', u'highly', u'him', u'his', u'hit', u'hold', u'holder', u'holds', u'home', u'hoped', u'horrible', u'hot', u'hours', u'house', u'how', u'however', u'huge', u'husband', u'id', u'idea', u'if', u'im', u'impossible', u'impressed', u'improvement', u'in', u'inexpensive', u'infant', u'infants', u'inside', u'install', u'installation', u'instead', u'instructions', u'into', u'invention', u'investment', u'is', u'isnt', u'issue', u'issues', u'it', u'item', u'items', u'its', u'ive', u'job', u'jogger', u'jumper', u'junk', u'just', u'keep', u'keeping', u'keeps', u'kept', u'kid', u'kids', u'kind', u'kit', u'know', u'lamp', u'large', u'larger', u'last', u'lasted', u'latch', u'later', u'leak', u'leaking', u'leaks', u'leaky', u'learning', u'less', u'let', u'lid', u'life', u'lifesaver', u'light', u'lights', u'lightweight', u'like', u'liked', u'likes', u'liner', u'liners', u'little', u'live', u'lock', u'locks', u'long', u'longer', u'look', u'looked', u'looking', u'looks', u'lot', u'lots', u'loud', u'love', u'loved', u'lovely', u'loves', u'loving', u'low', u'lunch', u'machine', u'made', u'major', u'make', u'makes', u'making', u'many', u'market', u'mat', u'match', u'material', u'mattress', u'may', u'maybe', u'me', u'medela', u'meh', u'mess', u'messy', u'might', u'milk', u'mind', u'mine', u'mini', u'mirror', u'misleading', u'missing', u'mo', u'mobile', u'model', u'mom', u'mommy', u'moms', u'money', u'monitor', u'monkey', u'month', u'months', u'more', u'most', u'mother', u'motor', u'move', u'much', u'multiple', u'munchkin', u'music', u'must', u'musthave', u'my', u'natural', u'nd', u'neat', u'necessary', u'necessity', u'neck', u'necklace', u'need', u'needed', u'needs', u'never', u'new', u'newborn', u'newborns', u'next', u'nice', u'nicely', u'niece', u'night', u'nipple', u'nipples', u'no', u'noise', u'not', u'nothing', u'now', u'nursery', u'nursing', u'of', u'off', u'ok', u'okay', u'old', u'older', u'on', u'once', u'one', u'ones', u'only', u'open', u'opening', u'option', u'options', u'or', u'order', u'ordered', u'organic', u'organizer', u'original', u'other', u'others', u'otherwise', u'our', u'out', u'over', u'overall', u'overpriced', u'own', u'paci', u'pacifier', u'pacifiers', u'pack', u'package', u'packaging', u'pad', u'pads', u'pail', u'pain', u'parent', u'parents', u'part', u'parts', u'pattern', u'pay', u'peace', u'penny', u'people', u'perfect', u'perfectly', u'person', u'photo', u'picture', u'pictured', u'piece', u'pieces', u'pillow', u'pink', u'place', u'plastic', u'plate', u'play', u'playard', u'please', u'pleased', u'plus', u'plush', u'pockets', u'poor', u'poorly', u'portable', u'potty', u'pouches', u'practical', u'present', u'pretty', u'price', u'priced', u'pricey', u'princess', u'print', u'probably', u'problem', u'problems', u'product', u'products', u'proof', u'protect', u'protection', u'protector', u'pull', u'pump', u'pumping', u'purchase', u'purchased', u'purpose', u'put', u'quality', u'quick', u'quickly', u'quiet', u'quite', u'rack', u'rail', u'range', u'rattle', u'read', u'real', u'really', u'rear', u'received', u'recommend', u'recommended', u'regular', u'reliable', u'remove', u'replacement', u'rest', u'return', u'returned', u'reusable', u'review', u'reviews', u'ride', u'right', u'ripped', u'room', u/home/grant309/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
   'precision', 'predicted', average, warn_for)
 /home/grant309/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples.
   'recall', 'true', average, warn_for)
-', u'saver', u'seat', u'seats', u'second', u'see', u'seems', u'service', u'set', u'she', u'sheet', u'sheets', u'shipping', u'short', u'should', u'shower', u'simple', u'sippy', u'size', u'sleep', u'small', u'smaller', u'smell', u'so', u'soft', u'solid', u'solution', u'some', u'something', u'son', u'sons', u'sound', u'space', u'star', u'stars', u'stay', u'stick', u'still', u'storage', u'stroller', u'strong', u'sturdy', u'stylish', u'such', u'suction', u'super', u'sure', u'swaddle', u'sweet', u'swing', u'system', u'table', u'take', u'teether', u'teething', u'terrible', u'than', u'that', u'the', u'their', u'them', u'then', u'there', u'these', u'they', u'thin', u'thing', u'things', u'think', u'this', u'though', u'thought', u'three', u'through', u'time', u'to', u'toddler', u'toddlers', u'together', u'too', u'top', u'toy', u'toys', u'training', u'travel', u'tried', u'tub', u'twins', u'two', u'until', u'up', u'us', u'use', u'used', u'useful', u'useless', u'using', u'value', u'versatile', u'very', u'wall', u'want', u'wanted', u'warm', u'was', u'wash', u'waste', u'water', u'way', u'we', u'weight', u'well', u'were', u'what', u'when', u'which', u'while', u'who', u'why', u'will', u'wipes', u'wish', u'with', u'without', u'wonderful', u'wont', u'work', u'worked', u'working', u'works', u'worst', u'worth', u'would', u'wouldnt', u'wrong', u'year', u'years', u'yet', u'you', u'your']
+'roomy', u'run', u'runs', u'sack', u'safe', u'safety', u'said', u'same', u'satisfied', u'save', u'saved', u'saver', u'saves', u'say', u'says', u'seat', u'seats', u'second', u'secure', u'see', u'seem', u'seemed', u'seems', u'seen', u'seller', u'sent', u'serves', u'service', u'set', u'several', u'shade', u'shape', u'she', u'sheet', u'sheets', u'shipping', u'short', u'should', u'shower', u'side', u'simple', u'simply', u'since', u'sippy', u'sit', u'size', u'sized', u'skip', u'sleep', u'sleeper', u'sleeping', u'sleeps', u'sling', u'small', u'smaller', u'smart', u'smell', u'smells', u'smooth', u'snack', u'snug', u'so', u'soft', u'solid', u'solution', u'some', u'something', u'son', u'sons', u'sooner', u'soothing', u'sophie', u'sound', u'sounds', u'space', u'special', u'spend', u'spent', u'spill', u'spoon', u'spoons', u'spout', u'st', u'stand', u'standard', u'star', u'stars', u'started', u'starter', u'static', u'stay', u'stays', u'step', u'stick', u'stickers', u'still', u'stool', u'stop', u'stopped', u'storage', u'store', u'strap', u'straps', u'straw', u'stroller', u'strollers', u'strong', u'stuck', u'stuff', u'stuffed', u'sturdy', u'style', u'stylish', u'such', u'suck', u'sucks', u'suction', u'summer', u'sun', u'super', u'support', u'supposed', u'sure', u'surprised', u'swaddle', u'swaddling', u'sweet', u'swing', u'system', u'table', u'take', u'takes', u'tall', u'teether', u'teething', u'terrible', u'terrific', u'than', u'thank', u'thanks', u'that', u'thats', u'the', u'their', u'them', u'then', u'there', u'thermometer', u'these', u'they', u'theyre', u'thick', u'thin', u'thing', u'things', u'think', u'this', u'those', u'though', u'thought', u'three', u'through', u'thumbs', u'tight', u'time', u'times', u'tiny', u'to', u'toddler', u'toddlers', u'together', u'toilet', u'too', u'took', u'tool', u'top', u'total', u'totally', u'towel', u'toy', u'toys', u'training', u'transition', u'travel', u'traveling', u'tray', u'trick', u'tried', u'trip', u'trips', u'true', u'truly', u'try', u'trying', u'tub', u'tummy', u'turtle', u'twice', u'twin', u'twins', u'two', u'umbrella', u'uncomfortable', u'under', u'unique', u'unit', u'unsafe', u'until', u'up', u'us', u'use', u'used', u'useful', u'useless', u'uses', u'using', u'value', u'velcro', u'versatile', u'version', u'very', u'video', u'vs', u'wait', u'walker', u'wall', u'want', u'wanted', u'warm', u'warmer', u'warning', u'was', u'wash', u'washes', u'washing', u'wasnt', u'waste', u'watch', u'water', u'waterproof', u'way', u'we', u'wear', u'week', u'weeks', u'weight', u'well', u'went', u'were', u'wet', u'weve', u'what', u'wheels', u'when', u'where', u'which', u'while', u'white', u'who', u'why', u'wide', u'wife', u'will', u'window', u'winter', u'wipe', u'wipes', u'wish', u'with', u'within', u'without', u'wonderful', u'wont', u'wood', u'work', u'worked', u'working', u'works', u'worst', u'worth', u'worthless', u'would', u'wouldnt', u'wow', u'wrap', u'wrong', u'yard', u'year', u'years', u'yes', u'yet', u'you', u'youll', u'young', u'your', u'youre', u'yr', u'zipper']
 B: 
 helpful_votes
-Baby_v1_00 Done
+Traceback (most recent call last):
+  File "Sentiment1.py", line 330, in <module>
+    gnb = gnb.fit(trainObs, trainCls)
+  File "/home/grant309/.local/lib/python2.7/site-packages/sklearn/naive_bayes.py", line 185, in fit
+    sample_weight=sample_weight)
+  File "/home/grant309/.local/lib/python2.7/site-packages/sklearn/naive_bayes.py", line 345, in _partial_fit
+    epsilon = 1e-9 * np.var(X, axis=0).max()
+  File "/home/grant309/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 3157, in var
+    **kwargs)
+  File "/home/grant309/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 117, in _var
+    x = asanyarray(arr - arrmean)
+MemoryError

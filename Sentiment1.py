@@ -145,7 +145,7 @@ for cats in data:
     #print(train_clean[['review_headline']])
 
     for columns in train_clean:
-        cv = CountVectorizer(binary=True, max_features=500)
+        cv = CountVectorizer(binary=True, max_features=1000)
         cv.fit(train_clean[columns])
         train_bin = cv.transform(train_clean[columns])
         test_bin = cv.transform(test_clean[columns])
@@ -169,7 +169,7 @@ for cats in data:
     
     #Set CLASS values to loop 
     base = [#'customer_id',
-    'helpful_votes',
+    'helpful_votes'#,
     #'product_id',
     #'product_parent',
     #'product_title',
@@ -177,10 +177,10 @@ for cats in data:
     #'review_date',
     #'review_headline',
     #'review_id',
-    'star_rating',
-    'total_votes',
-    'verified_purchase',
-    'vine'
+    #'star_rating',
+    #'total_votes',
+    #'verified_purchase',
+    #'vine'
     ]
 
     for b in base:
