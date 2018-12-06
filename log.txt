@@ -19,101 +19,75 @@ Try using .loc[row_indexer,col_indexer] = value instead
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
   reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.digits))
 Train_clean: 
-         customer_id  product_id  product_parent   ...   you  your  zipper
-1042912     20055447     1258752       243855337   ...     0     0       0
-3065873     29941554     1816981       857129731   ...     0     0       0
-5576998      1526784      152406       922970168   ...     0     0       0
-3293220     29495870     1629991       326483830   ...     0     0       0
-3385280      1964040     1556153       556062493   ...     0     0       0
-3586381     13612494     1388853       448081348   ...     0     0       0
-3120605     13314330     1771521       758211782   ...     0     0       0
-4080562      8355045     1027805       323091934   ...     0     0       0
-1823266     11918485     1298744       831548398   ...     0     0       0
-5837874     15309863       20520        49191888   ...     0     0       0
-5220834     19742166      326288       606068743   ...     0     0       0
-2288462     16191453      421086       818002753   ...     0     0       0
-1094966     19577464     1070192       607999666   ...     0     0       0
-3793937     20333047     1233478       203185731   ...     0     0       0
-4576627     10886444      693521       739035186   ...     0     0       0
-2605813     44005933     2256609       291757846   ...     0     0       0
-1451337     45817743     2225747       537112187   ...     0     0       0
-3004108      7305694     1867862        70033728   ...     0     0       0
-1292374      7581831      392886       916115749   ...     0     0       0
-100856       5973930     1744791       953508342   ...     0     0       0
-4637065     42725390      653442       504994331   ...     0     0       0
-553683      52020672     1448826       530235578   ...     0     0       0
-2881677     42316858     1972950       118056409   ...     0     0       0
-417054      18689068       97787       324867168   ...     0     0       0
-4033185     13139895     1060346       838924546   ...     0     0       0
-2993885      1634962     1876425       912996336   ...     0     0       0
-5640099     30084400      119396       562135699   ...     0     0       0
-1500664     45512749     2074113       299031783   ...     0     0       0
-3436233     10067616     1513784       319644423   ...     0     0       0
-5522177     12053065      179212       904346411   ...     0     0       0
-...              ...         ...             ...   ...    ..   ...     ...
-4596174     44335650      679956       114289251   ...     0     0       0
-3470379     11780563     1483368       292787372   ...     0     1       0
-885506      10223463     1906750       734672174   ...     0     0       0
-5443226     44395718      216873       860812808   ...     0     0       0
-4894358     14405249      502742       759499672   ...     0     0       0
-1314890     13446460      327032       408677902   ...     0     0       0
-1692181     34619784     1600829       828272575   ...     0     0       0
-2799183     23439641     2050373       693420074   ...     0     0       0
-5604108     16843797      137355       473497145   ...     0     0       0
-1999759     41265241      947462       771384615   ...     0     0       0
-2137542     41325518      678812        80509303   ...     0     0       0
-2502826     14599216      104262       780106290   ...     0     0       0
-4164100       276476      969160       905299178   ...     0     0       0
-2646899     16030778     2207518       915625952   ...     0     0       0
-4808788     13873626      550300       116358464   ...     0     0       0
-5845919     23712293       17205           68358   ...     0     0       0
-929427      21564883     1723654       443759137   ...     0     0       0
-4276758     47926152      885535       687193847   ...     0     0       0
-5059022     13895062      411153       654928734   ...     0     0       0
-1131995      7299829      941502       804070900   ...     0     0       0
-971159      47711506     1553601       851166735   ...     0     0       0
-1737517     21177934     1498141       749856566   ...     0     0       0
-3621436     16732534     1360240       388620970   ...     0     0       0
-4716776     18773211      604312       418613961   ...     0     0       0
-1241386      1733629      552388       258605239   ...     0     0       0
-4464675     45932042      766802       943460693   ...     0     0       0
-3282363     10461824     1639764       130264382   ...     0     0       0
-5268097     45664619      301585       726076083   ...     0     0       0
-3517942     16433117     1442538       984958348   ...     0     0       0
-5644671     44548545      116617       142199606   ...     0     0       0
+         customer_id  product_id  product_parent  ...  yet  you  your
+571349      52619078       74794       115701425  ...    0    0     0
+571051      45474498       85821       851749842  ...    0    0     0
+1856          673898       41745       776917390  ...    0    0     0
+571472      28679401       46843       456247721  ...    0    0     0
+1070282     37081146       55381       524189088  ...    0    0     0
+603291      19702885       45077       383646305  ...    0    0     0
+1120424     46551901      142185       101268890  ...    0    0     0
+1351215     18173996       36589       483688088  ...    0    0     0
+1132023     34969405       25342       884499763  ...    0    0     0
+1035546     49750519       47039       515483263  ...    0    0     0
+393692      37110195         537       872028396  ...    0    0     0
+140910      23706525         537       872028396  ...    0    0     0
+1193069     30312929       93056       816014400  ...    0    0     0
+943085      23248821       60483       656883836  ...    0    0     0
+1015549     12720769      111631       250785626  ...    0    0     0
+1763        29706437      146267       905464613  ...    0    0     0
+519978      11064911      124409       734616398  ...    0    0     0
+1724036     16660612        3086       281335472  ...    0    0     0
+1748102     42089730         386       212948862  ...    0    0     0
+120157      19566380       39711       366156493  ...    0    0     0
+1458166     28032551       41699        50251791  ...    0    0     0
+374326      15371870       47259       531152955  ...    0    0     0
+1037049     14009497      130862       423888528  ...    0    0     0
+113174      46680084       28419        56959563  ...    0    0     0
+1626333     18425387        1860       239489178  ...    0    0     0
+438823      38355589       96598       177777045  ...    0    0     0
+1468083     48210464       29400       342406142  ...    0    0     0
+1071312     22791641       71343       265688328  ...    0    0     0
+39230       25746120      124577       286298157  ...    0    0     0
+318436      24949195       76525       923540564  ...    0    0     0
+...              ...         ...             ...  ...   ..  ...   ...
+921793      32071471      107957        17074518  ...    0    0     0
+969188      23560230      123903       949533206  ...    0    0     0
+95687       35034310       56920       905916714  ...    0    0     0
+754463      49266287       95378       320851549  ...    0    0     0
+1469821     48232881       21040       250517482  ...    0    1     0
+921537      27072775       71924       106405675  ...    0    0     0
+1603487     17419579       36497       839151996  ...    0    0     0
+457155      51568967       10864       201648108  ...    0    0     0
+966403      49211190      107732       171100622  ...    0    0     0
+116721      46874021       38612       588175859  ...    0    0     0
+684784      16323682       24393       517991278  ...    0    0     0
+1011998     13371384      144297       478654663  ...    0    0     0
+1175652     11974621       93599       617061933  ...    0    0     0
+33074       43481723      128183       369806965  ...    0    0     0
+166540      30344289      129921       593605040  ...    0    0     0
+299094      45011051      114352       727011383  ...    0    0     0
+926833      39297561       91692       907990419  ...    0    0     0
+1211684     11760487      127632       962285136  ...    0    0     0
+1560587     46310587         943       325031069  ...    0    0     0
+505869      38435466       69102       991078149  ...    0    0     0
+1381447     47812028       83841       406923594  ...    0    0     0
+633491      48116102       52171       810017229  ...    0    0     0
+478940      17901780       35687       960847715  ...    0    0     0
+615970      13809304       69020       965361701  ...    0    0     0
+785078      47848094       44200       642672393  ...    0    0     0
+628845      50128378       52360       222201488  ...    0    0     0
+988422      25732040       70496       630106451  ...    0    0     0
+1312519     41592713       83842        70476958  ...    0    0     0
+132764      49404753        1742       298437734  ...    0    1     0
+1023470     26141154        9908       249900317  ...    0    0     0
 
-[4116641 rows x 511 columns]
-Traceback (most recent call last):
-  File "Sentiment.py", line 161, in <module>
-    train = train.drop(columns=['product_title'])
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/frame.py", line 3697, in drop
-    errors=errors)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3111, in drop
-    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3144, in _drop_axis
-    result = self.reindex(**{axis_name: new_axis})
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/util/_decorators.py", line 187, in wrapper
-    return func(*args, **kwargs)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/frame.py", line 3566, in reindex
-    return super(DataFrame, self).reindex(**kwargs)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3670, in reindex
-    self._consolidate_inplace()
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4439, in _consolidate_inplace
-    self._protect_consolidate(f)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4428, in _protect_consolidate
-    result = f()
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4437, in f
-    self._data = self._data.consolidate()
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 4098, in consolidate
-    bm._consolidate_inplace()
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 4103, in _consolidate_inplace
-    self.blocks = tuple(_consolidate(self.blocks))
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5069, in _consolidate
-    _can_consolidate=_can_consolidate)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5089, in _merge_blocks
-    new_values = _vstack([b.values for b in blocks], dtype)
-  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5135, in _vstack
-    return np.vstack(to_stack)
-  File "/home/grant309/.local/lib/python2.7/site-packages/numpy/core/shape_base.py", line 234, in vstack
-    return _nx.concatenate([atleast_2d(_m) for _m in tup], 0)
-MemoryError
+[1224264 rows x 511 columns]
+['customer_id', 'product_id', 'product_parent', 'star_rating', 'helpful_votes', 'total_votes', 'vine', 'verified_purchase', u'about', u'absolutely', u'actually', u'addition', u'adorable', u'advertised', u'after', u'again', u'all', u'almost', u'also', u'alternative', u'am', u'amazing', u'an', u'and', u'another', u'any', u'apart', u'are', u'around', u'arrived', u'as', u'assemble', u'at', u'awesome', u'babies', u'baby', u'babys', u'back', u'bad', u'bag', u'bags', u'bath', u'be', u'beautiful', u'because', u'bed', u'bedding', u'been', u'before', u'best', u'better', u'beware', u'bib', u'bibs', u'big', u'bigger', u'bit', u'blanket', u'blankets', u'book', u'booster', u'both', u'bottle', u'bottles', u'bought', u'box', u'boy', u'boys', u'brand', u'breast', u'bright', u'britax', u'broke', u'broken', u'brush', u'but', u'buy', u'buying', u'by', u'came', u'can', u'cant', u'car', u'carrier', u'carseat', u'chair', u'changing', u'cheap', u'child', u'children', u'choice', u'clean', u'cloth', u'color', u'colors', u'come', u'comfortable', u'comfy', u'compact', u'concept', u'convenient', u'cool', u'could', u'couldnt', u'cover', u'crib', u'cup', u'cups', u'customer', u'cute', u'daughter', u'daughters', u'day', u'deal', u'decent', u'definitely', u'described', u'design', u'diaper', u'diapers', u'did', u'didnt', u'different', u'difficult', u'disappointed', u'do', u'does', u'doesnt', u'done', u'dont', u'double', u'down', u'durable', u'easier', u'easily', u'easy', u'effective', u'enough', u'even', u'ever', u'every', u'everything', u'exactly', u'excellent', u'expected', u'expensive', u'extra', u'fabric', u'fantastic', u'far', u'fast', u'favorite', u'feeding', u'feel', u'few', u'finally', u'find', u'fine', u'first', u'fit', u'fits', u'five', u'flimsy', u'food', u'for', u'found', u'four', u'free', u'from', u'fun', u'functional', u'gate', u'get', u'gets', u'gift', u'girl', u'give', u'glad', u'go', u'going', u'good', u'got', u'graco', u'granddaughter', u'grandson', u'great', u'had', u'hands', u'handy', u'happy', u'hard', u'has', u'hate', u'have', u'he', u'head', u'heavy', u'help', u'helpful', u'her', u'high', u'highchair', u'highly', u'his', u'hold', u'holds', u'home', u'horrible', u'how', u'huge', u'idea', u'if', u'im', u'impressed', u'in', u'infant', u'install', u'into', u'is', u'issues', u'it', u'item', u'its', u'ive', u'job', u'junk', u'just', u'keep', u'keeps', u'kid', u'kids', u'know', u'large', u'last', u'leak', u'leaks', u'less', u'life', u'lifesaver', u'light', u'lightweight', u'like', u'liked', u'likes', u'little', u'live', u'long', u'look', u'looking', u'looks', u'lot', u'lots', u'love', u'loved', u'lovely', u'loves', u'made', u'make', u'makes', u'many', u'market', u'mat', u'material', u'mattress', u'me', u'medela', u'milk', u'mind', u'mirror', u'mobile', u'mom', u'moms', u'money', u'monitor', u'month', u'months', u'more', u'most', u'much', u'music', u'must', u'my', u'need', u'needed', u'needs', u'never', u'new', u'newborn', u'newborns', u'nice', u'night', u'nipple', u'no', u'not', u'nothing', u'now', u'nursery', u'nursing', u'of', u'off', u'ok', u'okay', u'old', u'older', u'on', u'one', u'ones', u'only', u'open', u'option', u'or', u'ordered', u'organizer', u'other', u'our', u'out', u'over', u'overall', u'own', u'pacifier', u'pack', u'pad', u'parents', u'parts', u'pay', u'penny', u'perfect', u'perfectly', u'picture', u'piece', u'pillow', u'pink', u'plastic', u'play', u'pleased', u'poor', u'portable', u'potty', u'practical', u'pretty', u'price', u'problem', u'problems', u'product', u'products', u'pump', u'pumping', u'purchase', u'purchased', u'purpose', u'put', u'quality', u'quick', u'quite', u'read', u'really', u'received', u'recommend', u'recommended', u'replacement', u'review', u'reviews', u'right', u'room', u'safe', u'safety', u'same', u'satisfied', u'save/home/grant309/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/grant309/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples.
+  'recall', 'true', average, warn_for)
+', u'saver', u'seat', u'seats', u'second', u'see', u'seems', u'service', u'set', u'she', u'sheet', u'sheets', u'shipping', u'short', u'should', u'shower', u'simple', u'sippy', u'size', u'sleep', u'small', u'smaller', u'smell', u'so', u'soft', u'solid', u'solution', u'some', u'something', u'son', u'sons', u'sound', u'space', u'star', u'stars', u'stay', u'stick', u'still', u'storage', u'stroller', u'strong', u'sturdy', u'stylish', u'such', u'suction', u'super', u'sure', u'swaddle', u'sweet', u'swing', u'system', u'table', u'take', u'teether', u'teething', u'terrible', u'than', u'that', u'the', u'their', u'them', u'then', u'there', u'these', u'they', u'thin', u'thing', u'things', u'think', u'this', u'though', u'thought', u'three', u'through', u'time', u'to', u'toddler', u'toddlers', u'together', u'too', u'top', u'toy', u'toys', u'training', u'travel', u'tried', u'tub', u'twins', u'two', u'until', u'up', u'us', u'use', u'used', u'useful', u'useless', u'using', u'value', u'versatile', u'very', u'wall', u'want', u'wanted', u'warm', u'was', u'wash', u'waste', u'water', u'way', u'we', u'weight', u'well', u'were', u'what', u'when', u'which', u'while', u'who', u'why', u'will', u'wipes', u'wish', u'with', u'without', u'wonderful', u'wont', u'work', u'worked', u'working', u'works', u'worst', u'worth', u'would', u'wouldnt', u'wrong', u'year', u'years', u'yet', u'you', u'your']
+B: 
+helpful_votes
+Baby_v1_00 Done

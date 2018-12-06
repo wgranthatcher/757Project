@@ -16,9 +16,9 @@ import string
 data = [
 #'Apparel1000'
 #
-'Apparel_v1_00'#,
+#'Apparel_v1_00'#,
 #'Automotive_v1_00',
-#'Baby_v1_00',
+'Baby_v1_00'#,
 #'Beauty_v1_00',
 #'Books_v1_00',
 #
@@ -177,10 +177,10 @@ for cats in data:
     #'review_date',
     #'review_headline',
     #'review_id',
-    #'star_rating',
-    #'total_votes',
-    #'verified_purchase',
-    #'vine'
+    'star_rating',
+    'total_votes',
+    'verified_purchase',
+    'vine'
     ]
 
     for b in base:
@@ -204,7 +204,9 @@ for cats in data:
         '''
         #Implementation for sentiment usage
         obs_bin = list(train)
-        obs_bin.remove(['product_title','review_body','review_headline'])
+        obs_bin.remove('product_title')
+        obs_bin.remove('review_body')
+        obs_bin.remove('review_headline')
         
         print(obs_bin)
         #print(obs_bin.index(b))
