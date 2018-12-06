@@ -108,6 +108,7 @@ for cats in data:
     cover['vine'] = lenc.fit_transform(cover['vine'])
     cover['verified_purchase'] = lenc.fit_transform(cover['verified_purchase'])
     cover['product_id'] = lenc.fit_transform(cover['product_id'])
+    cover = cover.drop(columns=['review_date'])
 
     #Create/Open file for data writing/collection
     #text_file = open('/home/grant309/757Project/SentimentResults.txt', "a+")
@@ -119,38 +120,48 @@ for cats in data:
     train=cover.sample(frac=0.7,random_state=1234)
     test=cover.drop(train.index)
 
+    train = train.loc[train['star_rating'].isin(['1','2','3','4','5'])]
+    test = test.loc[test['star_rating'].isin(['1','2','3','4','5'])]
+
     # ---- Attempt to vectorize 'HEADLINE' as one-hot binaries
     #print(train[['review_headline']])
 
-    train_clean = preprocess_reviews(train[['review_headline']])
-    test_clean = preprocess_reviews(test[['review_headline']])
+    strs = ['review_headline'
+    #,
+    #'review_body',
+    #'product_title'
+    ]
+
+    train_clean = preprocess_reviews(train[strs])
+    test_clean = preprocess_reviews(test[strs])
 
     print("Train_clean: ")
     print(train_clean)
     print("Diff: ")
     print(train_clean[['review_headline']])
 
-    cv = CountVectorizer(binary=True)
-    cv.fit(train_clean)
-    train_bin = cv.transform(train_clean)
-    test_bin = cv.transform(test_clean)
-
-    print("Train_bin: ")
-    print(train_bin)
-    print(train_bin.todense())
-
-    bigram_train = pd.DataFrame(train_bin.todense(), index=train.index, columns=cv.get_feature_names())
-    bigram_test = pd.DataFrame(test_bin.todense(), index=test.index, columns=cv.get_feature_names())
-    
-    train = pd.concat([train, bigram_train], axis=1)
-    test = pd.concat([test, bigram_test], axis=1)
+    for columns in train_clean:
+        cv = CountVectorizer(binary=True)
+        cv.fit(train_clean[columns])
+        train_bin = cv.transform(train_clean[columns])
+        test_bin = cv.transform(test_clean[columns])
+        
+        bigram_train = pd.DataFrame(train_bin.todense(), index=train.index, columns=cv.get_feature_names())
+        bigram_test = pd.DataFrame(test_bin.todense(), index=test.index, columns=cv.get_feature_names())
+        
+        train = pd.concat([train, bigram_train], axis=1)
+        test = pd.concat([test, bigram_test], axis=1)
 
     print(train)
+
+    train = train.drop(columns=['product_title','review_body','review_headline','review_id','product_category','marketplace'])
+    test = test.drop(columns=['product_title','review_body','review_headline','review_id','product_category','marketplace'])
+
     # ---- Attemt to vectorize 'HEADLINE' as one-hot binaries
     
     #Set CLASS values to loop 
     base = [#'customer_id',
-    'helpful_votes',
+    'helpful_votes'#,
     #'product_id',
     #'product_parent',
     #'product_title',
@@ -168,25 +179,25 @@ for cats in data:
         
         #Set data values for classification
         '''
-        obs_bin = ['customer_id',
-        'helpful_votes',
-        'product_id',
-        'product_parent',
-        #'product_title',
-        #'review_body',
+        obs_drop = [ #'customer_id',
+        #'helpful_votes',
+        #'product_id',
+        #'product_parent',
+        'product_title',
+        'review_body',
         #'review_date',
-        #'review_headline',
-        #'review_id',
-        'star_rating',
-        'total_votes',
-        'verified_purchase',
-        'vine'
+        'review_headline',
+        'review_id'#,
+        #'star_rating',
+        #'total_votes',
+        #'verified_purchase',
+        #'vine'
         ]
         '''
         #Implementation for sentiment usage
         obs_bin = list(train)
-
-        #print(obs_bin)
+        
+        print(obs_bin)
         #print(obs_bin.index(b))
         
         print("B: ")
