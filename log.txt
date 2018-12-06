@@ -1,80 +1,119 @@
-Skipped Lines: Apparel v1
-49396
-57008
-82075
-104435
-109766
-124024
-129914
-130172
-161515
-230464
-292640
-293681
-316511
-317239
-326099
-327595
-342645
-347980
-376258
-381192
-386485
-407400
-416310
-416980
-455682
-472662
-539038
-580519
-635125
-723898
-760157
-789445
-796985
-810160
-880731
-894334
-921347
-931127
-1008439
-1037655
-1055998
-1188632
-1233723
-1244463
-1507887
-1564930
-1807298
-1829193
-1807298
-1829193
-1868798
-1904329
-1935010
-1957592
-1965838
-1976381
-2014993
-2037893
-2437394
-2538052
-2569847
-2759787
-2987929
-3174718
-3259703
-3424140
-3430150
-3489349
-3529163
-3730489
-4073027
-4127350
-4508712
-5115619
-5279907
-5318712
-5432514
-5568417
-5840248
+/home/grant309/.local/lib/python2.7/site-packages/sklearn/ensemble/weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+Sentiment.py:88: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  reviews[columns] = reviews[columns].apply(lambda x: x.lower())
+Sentiment.py:89: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.punctuation))
+Sentiment.py:90: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  reviews[columns] = reviews[columns].apply(lambda x: x.translate(None, string.digits))
+Train_clean: 
+        marketplace  customer_id       review_id  product_id  product_parent   ...   yes yet  you  your  zipper
+1042912          US     20055447   RUXSO3JCHKNOO     1258752       243855337   ...     0   0    0     0       0
+3065873          US     29941554   RK20UB987O6BB     1816981       857129731   ...     0   0    0     0       0
+5576998          US      1526784   R3INF0G8FTPDP      152406       922970168   ...     0   0    0     0       0
+3293220          US     29495870  R1SSEOJ104ZPK9     1629991       326483830   ...     0   1    0     0       0
+3385280          US      1964040  R1F73FENGQWA09     1556153       556062493   ...     0   0    0     0       0
+3586381          US     13612494  R22GJ5NZJ4BKPK     1388853       448081348   ...     0   0    0     0       0
+3120605          US     13314330  R2GGEO8JC3GZBF     1771521       758211782   ...     0   0    0     0       0
+4080562          US      8355045   R8CC9JOQFX3LR     1027805       323091934   ...     0   0    0     0       0
+1823266          US     11918485  R2LWMOIJZM2WPA     1298744       831548398   ...     0   0    0     0       0
+5837874          US     15309863  R2FE8TCSALAUDC       20520        49191888   ...     0   0    0     0       0
+5220834          US     19742166  R2TJ84JA9KH46T      326288       606068743   ...     0   0    0     0       0
+2288462          US     16191453  R1F8HVKOSIX9WR      421086       818002753   ...     0   0    0     0       0
+1094966          US     19577464  R3GLBG2W0S6ILO     1070192       607999666   ...     0   0    0     0       0
+3793937          US     20333047  R15DAOWKPBJNST     1233478       203185731   ...     0   0    0     0       0
+4576627          US     10886444  R30BUHUVL1JR85      693521       739035186   ...     0   0    0     0       0
+2605813          US     44005933   RT26U2V0F7H0B     2256609       291757846   ...     0   0    0     0       0
+1451337          US     45817743  R1XU2IH6JRL56H     2225747       537112187   ...     0   0    0     0       0
+3004108          US      7305694  R11UUQ2QHC1PPY     1867862        70033728   ...     0   0    0     0       0
+1292374          US      7581831  R18SCVE3BZ508W      392886       916115749   ...     0   0    0     0       0
+100856           US      5973930  R16CVD0LVP37DY     1744791       953508342   ...     0   0    0     0       0
+4637065          US     42725390  R2SP9FTINBGIXT      653442       504994331   ...     0   0    0     0       0
+553683           US     52020672   RW1O5UO6ETJVY     1448826       530235578   ...     0   0    0     0       0
+2881677          US     42316858  R2CAAWSK3232U3     1972950       118056409   ...     0   0    0     0       0
+417054           US     18689068  R23VHS2CUBCSU4       97787       324867168   ...     0   0    0     0       0
+4033185          US     13139895  R1HY17DX3VLNHD     1060346       838924546   ...     0   0    0     0       0
+2993885          US      1634962   RW0XYRNGJU0ND     1876425       912996336   ...     0   0    0     0       0
+5640099          US     30084400  R1WYY9L45Z2Z7R      119396       562135699   ...     0   0    0     0       0
+1500664          US     45512749  R1N0QUSNFU4J3X     2074113       299031783   ...     0   0    0     0       0
+3436233          US     10067616  R12UPT1UOQKY9P     1513784       319644423   ...     0   0    0     0       0
+5522177          US     12053065   RL8OHI280O88L      179212       904346411   ...     0   0    0     0       0
+...             ...          ...             ...         ...             ...   ...    ..  ..  ...   ...     ...
+4596174          US     44335650  R2ELJ1Q0XOQE33      679956       114289251   ...     0   0    0     0       0
+3470379          US     11780563  R3S4ZQUQM7367F     1483368       292787372   ...     0   0    0     1       0
+885506           US     10223463   RU2E1YO0YMB4U     1906750       734672174   ...     0   0    0     0       0
+5443226          US     44395718  R2TEUKE6YUSDY1      216873       860812808   ...     0   0    0     0       0
+4894358          US     14405249  R2034C6AYQJK23      502742       759499672   ...     0   0    0     0       0
+1314890          US     13446460   RS6GUOA7NOHCX      327032       408677902   ...     0   0    0     0       0
+1692181          US     34619784  R20X9HKW5CRPL0     1600829       828272575   ...     0   0    0     0       0
+2799183          US     23439641  R3D19SWAXYG2BP     2050373       693420074   ...     0   0    0     0       0
+5604108          US     16843797  R2X32WJVB0QKIV      137355       473497145   ...     0   0    0     0       0
+1999759          US     41265241  R2NZVK2RVNJFX7      947462       771384615   ...     0   0    0     0       0
+2137542          US     41325518  R3EN503TWHZOXU      678812        80509303   ...     0   0    0     0       0
+2502826          US     14599216  R2SYFZ373ZG2UW      104262       780106290   ...     0   0    0     0       0
+4164100          US       276476   RAXGUX0LT9877      969160       905299178   ...     0   0    0     0       0
+2646899          US     16030778  R1HDOLXA81B348     2207518       915625952   ...     0   0    0     0       0
+4808788          US     13873626  R2X4ILLEY3NHGK      550300       116358464   ...     0   0    0     0       0
+5845919          US     23712293  R3W57NV707CC5I       17205           68358   ...     0   0    0     0       0
+929427           US     21564883  R27A8PQAPSWX4J     1723654       443759137   ...     0   0    0     0       0
+4276758          US     47926152   RV0JHJ4GK0HR7      885535       687193847   ...     0   0    0     0       0
+5059022          US     13895062  R1D0JZL6EHK6NL      411153       654928734   ...     0   0    0     0       0
+1131995          US      7299829  R3UBUZZCGUJVC8      941502       804070900   ...     0   0    0     0       0
+971159           US     47711506   RJAKUMEUT752V     1553601       851166735   ...     0   0    0     0       0
+1737517          US     21177934   R5LNM3P4HFAIC     1498141       749856566   ...     0   0    0     0       0
+3621436          US     16732534  R2UBL2YIQDQV3N     1360240       388620970   ...     0   0    0     0       0
+4716776          US     18773211  R25N3T1XQYV3VN      604312       418613961   ...     0   0    0     0       0
+1241386          US      1733629  R2RN58D4SHZDPI      552388       258605239   ...     0   0    0     0       0
+4464675          US     45932042  R1HX5WG9GD4AEH      766802       943460693   ...     0   0    0     0       0
+3282363          US     10461824  R1XVR55BVMQE7P     1639764       130264382   ...     0   0    0     0       0
+5268097          US     45664619  R1DC07WLFVI3D3      301585       726076083   ...     0   0    0     0       0
+3517942          US     16433117  R2MWP203V5OJ2J     1442538       984958348   ...     0   0    0     0       0
+5644671          US     44548545  R1EU6CTDAXUOL5      116617       142199606   ...     0   0    0     0       0
+
+[4116641 rows x 514 columns]
+Traceback (most recent call last):
+  File "Sentiment.py", line 158, in <module>
+    train = train.drop(columns=['product_title','review_body','review_headline','review_id','product_category','marketplace'])
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/frame.py", line 3697, in drop
+    errors=errors)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3111, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3144, in _drop_axis
+    result = self.reindex(**{axis_name: new_axis})
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/util/_decorators.py", line 187, in wrapper
+    return func(*args, **kwargs)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/frame.py", line 3566, in reindex
+    return super(DataFrame, self).reindex(**kwargs)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 3670, in reindex
+    self._consolidate_inplace()
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4439, in _consolidate_inplace
+    self._protect_consolidate(f)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4428, in _protect_consolidate
+    result = f()
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/generic.py", line 4437, in f
+    self._data = self._data.consolidate()
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 4098, in consolidate
+    bm._consolidate_inplace()
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 4103, in _consolidate_inplace
+    self.blocks = tuple(_consolidate(self.blocks))
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5069, in _consolidate
+    _can_consolidate=_can_consolidate)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5089, in _merge_blocks
+    new_values = _vstack([b.values for b in blocks], dtype)
+  File "/home/grant309/.local/lib/python2.7/site-packages/pandas/core/internals.py", line 5135, in _vstack
+    return np.vstack(to_stack)
+  File "/home/grant309/.local/lib/python2.7/site-packages/numpy/core/shape_base.py", line 234, in vstack
+    return _nx.concatenate([atleast_2d(_m) for _m in tup], 0)
+MemoryError
