@@ -110,6 +110,9 @@ for cats in data:
     cover['verified_purchase'] = lenc.fit_transform(cover['verified_purchase'])
     cover['product_id'] = lenc.fit_transform(cover['product_id'])
     cover = cover.drop(columns=['review_date'])
+    cover = cover.drop(columns=['review_id'])
+    cover = cover.drop(columns=['product_category'])
+    cover = cover.drop(columns=['marketplace'])
 
     #Create/Open file for data writing/collection
     #text_file = open('/home/grant309/757Project/SentimentResults.txt', "a+")
@@ -155,8 +158,12 @@ for cats in data:
 
     print(train)
 
-    train = train.drop(columns=['product_title','review_body','review_headline','review_id','product_category','marketplace'])
-    test = test.drop(columns=['product_title','review_body','review_headline','review_id','product_category','marketplace'])
+    train = train.drop(columns=['product_title'])
+    test = test.drop(columns=['product_title'])
+    train = train.drop(columns=['review_body'])
+    test = test.drop(columns=['review_body'])
+    train = train.drop(columns=['review_headline'])
+    test = test.drop(columns=['review_headline'])
 
     # ---- Attemt to vectorize 'HEADLINE' as one-hot binaries
     
