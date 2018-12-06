@@ -3140,4 +3140,128 @@ DT Entropy Accuracy:
      1053.0       0.00      0.00      0.00         0
      1061.0       0.00      0.00      0.00         1
      1068.0       0.00      0.00      0.00         0
-     1079.0 
+     1079.0       0.00      0.00      0.00         1
+     1093.0       0.00      0.00      0.00         0
+     1106.0       0.00      0.00      0.00         1
+     1113.0       0.00      0.00      0.00         1
+     1118.0       0.00      0.00      0.00         0
+     1131.0       0.00      0.00      0.00         0
+     1144.0       0.00      0.00      0.00         1
+     1151.0       0.00      0.00      0.00         1
+     1192.0       0.00      0.00      0.00         0
+     1202.0       0.00      0.00      0.00         1
+     1216.0       0.00      0.00      0.00         1
+     1235.0       0.00      0.00      0.00         0
+     1247.0       0.00      0.00      0.00         1
+     1258.0       0.00      0.00      0.00         1
+     1273.0       0.00      0.00      0.00         0
+     1321.0       0.00      0.00      0.00         1
+     1391.0       0.00      0.00      0.00         1
+     1423.0       0.00      0.00      0.00         1
+     1493.0       0.00      0.00      0.00         1
+     1539.0       0.00      0.00      0.00         0
+     1542.0       0.00      0.00      0.00         1
+     1593.0       0.00      0.00      0.00         1
+     1631.0       0.00      0.00      0.00         0
+     1752.0       0.00      0.00      0.00         0
+     1820.0       0.00      0.00      0.00         0
+     1873.0       0.00      0.00      0.00         1
+     1978.0       0.00      0.00      0.00         1
+     2115.0       0.00      0.00      0.00         1
+     2738.0       0.00      0.00      0.00         0
+     5471.0       0.00      0.00      0.00         1
+
+avg / total       1.00      1.00      1.00    524684
+
+Class Attribute: verified_purchase
+---- KNN ----
+[1 1 1 ... 0 1 1]
+KNN Accuracy:
+0.7485114850081191
+[[ 27459  80270]
+ [ 51682 365273]]
+             precision    recall  f1-score   support
+
+          0       0.35      0.25      0.29    107729
+          1       0.82      0.88      0.85    416955
+
+avg / total       0.72      0.75      0.73    524684
+
+---- Decision Tree ----
+[1 1 1 ... 0 0 0]
+DT Accuracy:
+1.0
+[[107729      0]
+ [     0 416955]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00    107729
+          1       1.00      1.00      1.00    416955
+
+avg / total       1.00      1.00      1.00    524684
+
+---- Decision Tree Entropy ----
+DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter='best')
+[1 1 1 ... 0 0 0]
+DT Entropy Accuracy:
+1.0
+[[107729      0]
+ [     0 416955]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00    107729
+          1       1.00      1.00      1.00    416955
+
+avg / total       1.00      1.00      1.00    524684
+
+Class Attribute: vine
+---- KNN ----
+[0 0 0 ... 0 0 0]
+KNN Accuracy:
+0.9914043500468853
+[[519856   1210]
+ [  3300    318]]
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00    521066
+          1       0.21      0.09      0.12      3618
+
+avg / total       0.99      0.99      0.99    524684
+
+---- Decision Tree ----
+[0 0 0 ... 0 0 0]
+DT Accuracy:
+1.0
+[[521066      0]
+ [     0   3618]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00    521066
+          1       1.00      1.00      1.00      3618
+
+avg / total       1.00      1.00      1.00    524684
+
+---- Decision Tree Entropy ----
+DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter='best')
+[0 0 0 ... 0 0 0]
+DT Entropy Accuracy:
+1.0
+[[521066      0]
+ [     0   3618]]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00    521066
+          1       1.00      1.00      1.00      3618
+
+avg / total       1.00      1.00      1.00    524684
+
