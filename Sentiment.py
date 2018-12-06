@@ -158,12 +158,12 @@ for cats in data:
 
     print(train)
 
-    train = train.drop(columns=['product_title'])
-    test = test.drop(columns=['product_title'])
-    train = train.drop(columns=['review_body'])
-    test = test.drop(columns=['review_body'])
-    train = train.drop(columns=['review_headline'])
-    test = test.drop(columns=['review_headline'])
+    #train = train.drop(columns=['product_title'])
+    #test = test.drop(columns=['product_title'])
+    #train = train.drop(columns=['review_body'])
+    #test = test.drop(columns=['review_body'])
+    #train = train.drop(columns=['review_headline'])
+    #test = test.drop(columns=['review_headline'])
 
     # ---- Attemt to vectorize 'HEADLINE' as one-hot binaries
     
@@ -204,6 +204,7 @@ for cats in data:
         '''
         #Implementation for sentiment usage
         obs_bin = list(train)
+        obs_bin.remove(['product_title','review_body','review_headline'])
         
         print(obs_bin)
         #print(obs_bin.index(b))
