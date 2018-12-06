@@ -14,8 +14,9 @@ import string
 
 #List of Data Files - Amazon AWS Review Data
 data = [
-'Apparel1000'
-#'Apparel_v1_00',
+#'Apparel1000'
+#
+'Apparel_v1_00'#,
 #'Automotive_v1_00',
 #'Baby_v1_00',
 #'Beauty_v1_00',
@@ -100,8 +101,8 @@ text_file.close()
 #pd.set_option('float_format', '{:f}'.format)
 
 for cats in data:
-    #cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
-    cover = pd.read_csv('%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
+    cover = pd.read_csv('/home/grant309/757Project/DataPro/%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
+    #cover = pd.read_csv('%s.tsv' % cats, delimiter="\t", error_bad_lines=False)
 
     #Convert categorical String values to binned Integers
     lenc = LabelEncoder()
@@ -136,12 +137,12 @@ for cats in data:
     test_clean = preprocess_reviews(test[strs])
 
     print("Train_clean: ")
-    print(train_clean)
-    print("Diff: ")
-    print(train_clean[['review_headline']])
+    #print(train_clean)
+    #print("Diff: ")
+    #print(train_clean[['review_headline']])
 
     for columns in train_clean:
-        cv = CountVectorizer(binary=True)
+        cv = CountVectorizer(binary=True, max_features=500)
         cv.fit(train_clean[columns])
         train_bin = cv.transform(train_clean[columns])
         test_bin = cv.transform(test_clean[columns])
