@@ -145,7 +145,7 @@ for cats in data:
     #print(train_clean[['review_headline']])
 
     for columns in train_clean:
-        cv = CountVectorizer(binary=True, max_features=1000)
+        cv = CountVectorizer(binary=True, max_features=5000)
         cv.fit(train_clean[columns])
         train_bin = cv.transform(train_clean[columns])
         test_bin = cv.transform(test_clean[columns])
