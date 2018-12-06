@@ -1,0 +1,13 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: FinalReport.aux
+The style file: abbrv.bst
+Database file #1: ref.bib
+I was expecting a `,' or a `}'---line 14 of file ref.bib
+ :  
+ :  url = {https://matheo.uliege.be/handle/2268.2/2707}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in fortune
+Warning--to sort, need author or key in aws
+Warning--to sort, need author or key in python
+Warning--to sort, need author or key in sklearn
+(There was 1 error message)

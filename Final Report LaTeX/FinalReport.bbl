@@ -1,0 +1,55 @@
+\begin{thebibliography}{1}
+
+\bibitem{aws}
+Amazon customer reviews dataset.
+\newblock AWS
+\newblock \url{https://registry.opendata.aws/amazon-reviews/}, 2018.
+
+\bibitem{python}
+Python.
+\newblock \url{https://www.python.org/}, 2018.
+
+\bibitem{sklearn}
+scikit-learn.
+\newblock \url{https://scikit-learn.org/stable/}, 2018.
+
+\bibitem{fortune}
+The top 10.
+\newblock Fortune 500
+\newblock \url{http://fortune.com/fortune500/}, 2018.
+
+\bibitem{visual}
+J.~Desjardins.
+\newblock The extraordinary size of amazon in one chart.
+\newblock Visual Capitalist
+\newblock
+  \url{https://www.visualcapitalist.com/extraordinary-size-amazon-one-chart/},
+  2016.
+
+\bibitem{bezos}
+A.~Hartmans.
+\newblock 15 fascinating facts you probably didn't know about amazon.
+\newblock Business Insider
+\newblock
+  \url{https://www.businessinsider.com/jeff-bezos-amazon-history-facts-2017-4},
+  dec 2018.
+
+\bibitem{master}
+M.~Martin.
+\newblock Predicting ratings of amazon reviews - techniques for imbalanced
+  datasets.
+\newblock Master's thesis, Université de Liège, Liège, Belgique, 2017.
+
+\bibitem{ocampo}
+G.~Ocampo~Diaz and V.~Ng.
+\newblock Modeling and prediction of product review helpfulness: A survey.
+\newblock In {\em Proceedings of 56th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 698--708, 2018.
+
+\bibitem{Yoon}
+Y.-J. Park.
+\newblock {Predicting the Helpfulness of Online Customer Reviews across
+  Different Product Types}.
+\newblock {\em Sustainability}, 10(6):1--20, May 2018.
+
+\end{thebibliography}

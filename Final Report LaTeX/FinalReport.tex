@@ -1,0 +1,292 @@
+\documentclass[10pt, conference, compsocconf]{IEEEtran}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{subeqnarray}
+\usepackage{cases}
+\usepackage{url}
+\usepackage{breakurl}
+%\usepackage[breaklinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{subfig}
+%\usepackage{subcaption}
+%\usepackage{cleveref}
+\usepackage[noabbrev]{cleveref}
+%\usepackage{mwe}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{fixltx2e}
+\pagenumbering{arabic}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{verbatim}
+\usepackage[labelsep=period]{caption}
+%\captionsetup[figure]{margin={1cm,0cm}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\bbf}[1]{\mbox{\boldmath$#1$\unboldmath}}
+\newcommand{\red}[1]{\textcolor{red}{\bf #1}}
+\newcommand{\warn}[1]{}
+%\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+%\renewcommand\thesubfigure{(\alph{subfigure})}
+\def\linespaces{1.0}
+\def\baselinestretch{\linespaces}
+
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+
+
+\begin{document}
+
+\title{Data Mining and Predictive Modeling of Amazon Customer Reviews \\ {\large COSC 757.101 – Data Mining:  Final Report}}
+
+\newcommand{\superast}{\raisebox{9pt}{$\ast$}}
+\newcommand{\superdagger}{\raisebox{9pt}{$\dagger$}}
+\newcommand{\superddagger}{\raisebox{9pt}{$\ddagger$}}
+\newcommand{\superS}{\raisebox{9pt}{$\S$}}
+\newcommand{\superP}{\raisebox{9pt}{$\P$}}
+
+\author{\IEEEauthorblockN{W. Grant Hatcher, Kevin McNamara}
+\IEEEauthorblockA{Department of Computer and Information Sciences, Department of Marketing\\ Towson University, Maryland, USA 21252, USA \\Emails:  whatch2@students.towson.edu, kmcnam3@students.towson.edu}}
+
+\maketitle
+
+\begin{abstract}
+%In this proposal, we explore a set of Amazon customer reviews to analyze patterns between various attributes and develop a predictive tool for discovered correlated variables. Considering a dataset of over 130 million reviews provided from Amazon's AWS service, we have the potential to consider the impacts of positive and negative reviews on product ratings and customer sentiment. Moreover, applying advanced machine learning systems, such as deep neural networks in TensorFlow, we have the potential to provide high-accuracy predictive capabilities to be leveraged for consumer targeting, increased customer satisfaction, and the generation of additional revenue. 
+
+In this project, we explore available Amazon customer review data to analyze patterns across various attributes and develop predictive tools. Considering a dataset of over 130 million reviews acquired from Amazon's AWS service, we have the potential to consider the impacts of positive and negative reviews on product ratings and customer sentiment. Moreover, applying shallow learning techniques, such as K-Nearest Neighbor and Decision Tree algorithms, we develop high-accuracy predictive capabilities to be leveraged for consumer targeting, increased customer satisfaction, and potentially the generation of additional revenue. Taking the number of helpful votes as a measure of the efficacy of a review on a user's decision to purchase and their satisfaction with that decision, we can predict the helpfulness of a review with an accuracy of over 80\% using only categorical data. In addition, through the implementation of sentiment analysis mechanisms, we increase this accuracy significantly with the addition of textual data.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Data mining, Machine learning, Exploratory Data Analysis
+\end{IEEEkeywords}
+
+\section{Introduction}\label{intro}
+
+Since Amazon’s launch in 1994 \cite{bezos}, it has become the 8th highest company in the United States in terms of revenue earnings \cite{fortune}.  With an outsize market share in the retail industry of \$355.9 billion \cite{visual}, Amazon is the leader in overall retail in the US, larger than the eight largest brick-and-mortar stores combined. The tech giant naturally then possesses a wealth of data regarding customer purchases, preferences, reviews, and more. Moreover, as part of their platform, their customers have left hundreds of millions, if not billions, of reviews on items purchased. Through Amazon Web Services (AWS), Amazon has made available over 130 million of these reviews in TSV file format, organized by product category for use in testing and analysis in their cloud services. Using data mining techniques, we can harness this data to research patterns in customer sentiment and buying habits.
+
+In our initial analysis, we note that much of the customer review data demonstrates uniformity across the different product segments. As our primary target of interest, we are attempting to apply machine learning algorithms to predict Star Rating and Helpful Votes for individual product purchase reviews. Indeed, the distribution of star ratings is very uniform across categories, the vast majority of which are the maximum of 5 stars. This presents potential challenges in finding a highly-accurate algorithm to predict the star rating, especially for the under-represented classes. In addition, the helpful vote fields have some regularity as well, with a significant minority having an outsize portion of votes.
+
+
+\section{Approach}\label{approach}
+
+\subsection{Data Description} 
+
+The dataset we are evaluating is the Amazon Customer Reviews Dataset \cite{aws} available from Amazon Web Services (AWS) cloud. The dataset consists of more than 130 million reviews of Amazon products, separated into 43 subcategories (apparel, books, grocery, jewelry, luggage, etc.), each with over a million reviews. The dataset includes the attributes \textit{customer\_id}, \textit{helpful\_votes}, \textit{marketplace}, \textit{product\_category}, \textit{product\_id}, \textit{product\_parent}, \textit{product\_title}, \textit{review\_body}, \textit{review\_date}, \textit{review\_headline}, \textit{review\_id}, \textit{star\_rating}, \textit{total\_votes}, \textit{verified\_purchase}, and \textit{vine}. More specifically, the field \textit{marketplace} is always “US” for United States, and the field \textit{product\_category} is uniform within each subcategory file (apparel, books, etc.). In addition, \textit{helpful\_votes}, \textit{total\_votes}, and \textit{product\_parent} are integer values, and \textit{review\_date} is a date of format YYYY-MM-DD. The attributes \textit{product\_title}, \textit{review\_body}, and \textit{review\_headline} are all variable-length strings. Finally, \textit{product\_id} and \textit{review\_id} are alphanumeric strings of capital letters and numbers of varying length.
+
+\begin{figure*}[ht]
+	\vspace{-2mm}
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"customer_id".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"customer_id".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"product_parent".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"product_parent".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"star_rating".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"star_rating".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"verified_purchase".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"verified_purchase".png}\\
+	%	\caption{Basic Block Example}
+	
+	\centering
+	\includegraphics[width=0.19\textwidth]{../Figures/Apparel_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Automotive_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Baby_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Beauty_v1_00/"helpful_votes".png}
+	\includegraphics[width=0.19\textwidth]{../Figures/Books_v1_00/"helpful_votes".png}\\
+	%	\caption{Basic Block Example}
+	
+	%\captionsetup{justification=centering, width=0.9\textwidth}
+	\caption{Histograms and Density Estimation plots of product categories Apparel, Automotive, Baby, Beauty, and Books (left to right). Attributes are \textit{customer\_id}, \textit{product\_parent}, \textit{star\_rating}, \textit{verified\_purchase}, and \textit{helpful\_votes} (top to bottom).}
+	\label{fig1}
+\end{figure*}
+
+\subsection{Accessing the Dataset}
+
+As the first part of the process, we had to access the data from AWS. This proved challenging, because data is segmented into 46 separate files sorted by product category and were each quite large in size. Together they reached approximately 80 GB in storage size. Moreover, with over 130 million reviews, we needed a powerful machine with enough memory and processing power to be able to extract, load in, sort and manipulate such big data into memory. This was accomplished by utilizing a Dell PowerEdge R910 server with Intel Xeon E7530 processor and 64GB memory running and Ubuntu Linux 16.04.5 LTS virtual machine on top of VMWare ESXi 6.0. This was the best machine at our disposal, however, as we will see, this still presented some limitations. Each data file was thus downloaded via URL link provided in the "index.txt document", and was provided in .tsv or tab-separated file format, presumably because text data may itself have commas present, potentially breaking import processes into programs. The ability to read in these data files presented a challenge, as most traditional text editors, word processors, and spreadsheet software, especially on Windows PCs, could not open even one file or would run impossibly slowly when attempting any edits.
+
+\begin{center}
+	\begin{table*}[!]
+		\centering \footnotesize
+		\vspace{0.01cm}
+		\caption{Data descriptions averaged over all seven product subcategories.}
+		\hspace{1cm}
+		\begin{tabular}{| l | c | c | c | c | c | c | c | c |}
+			\hline
+			\textbf{AVERAGE} & \textbf{customer\_id}	& \textbf{product\_parent}	& \textbf{star\_rating}	& \textbf{helpful\_votes}& 	\textbf{total\_votes} \\ \hline
+			
+			\textit{Count} & 28371981 &	28371981 &	28371981 &	28371981 &	28371981 \\ \hline
+			\textit{Average} & 4053140 &	4053140 &	4053140 &	4053140 &	4053140  \\ \hline
+			\textit{Mean} & 27550919 &	507045022&	4&	2&	2	 \\ \hline
+			\textit{Std. Dev.} & 15383160&	288812824&	1	&19	&20	 \\ \hline
+			\textit{Min} &10043&	31422&	1&	0&	0	\\ \hline
+			\textit{25\% Quartile} & 14223243&	256026516	&4&	0&	0	 \\ \hline
+			\textit{50\% Quartile (Median)} & 	26304429&	518488891&	5&	0&	0	 \\ \hline
+			\textit{75\% Quartile} & 41963264&	760629282&	5&	1&	1	\\ \hline
+			\textit{Max} & 53096535&	999983463&	5&	14679&	14952 \\ \hline
+			%\cellcolor{lightgray} & \cellcolor{lightgray} \\ \hline
+		\end{tabular}\newline
+		\vspace{-0.05cm}
+		\label{Table1}
+	\end{table*} \hfil
+\end{center} \vspace{-6mm}
+
+\subsection{Data Preprocessing}
+
+Preparing the data for analysis, we again ran into difficulties. In such a large dataset the amount of missing data and anomalies is quite substantial. What's more, with individual files on the order of several gigabytes, it is impossible to individually search through the rows of data instances. Thus, normalizing this data and preparing it for input into learning models was certainly a challenge. In this phase, it became evident that analyzing the entire dataset (broken up into 43 product category sets in 46 files) would be nearly impossible without careful consideration of programming operations. Simple processes would consume significant amounts of time, such as loading any individual file into Python \cite{python} as a DataFrame (a Python matrix implementation), which would take tens of minutes, and thus any later operations that fail would incur the same cost over again.  Additionally, some operations we simply impossible, on one subset (individual files) or the entire dataset, such as dropping large columns from a DataFrame. As an example, trying to loop even once through several million data items is not feasible. 
+
+Despite these limitations to assessing the dataset, the Python DataFrame offered many efficient options that could be performed on the entire matrix at once. This includes removing NaN (Not a Number) and missing characters, rows with too many columns, and values that do not match the column, especially for categorical variables. Additionally, the Python .loc or locate function allows for efficient location of data subsets with little overhead, and in this experiment we are using Python 2.7 \cite{python}. In addition, to be able to apply machine learning algorithms to our datasets, we converted non-numeric categorical strings to binned numeric values. For instance, the attributes \textit{verified\_purchase} and \textit{vine} were converted to binary values of 0 and 1 from strings “N” and “Y” representing no and yes. Despite the advantages of Python, we still frequently ran into issues in trying to drop columns, as well as train and test learning models, both of which exceeded memory and ended the program.
+
+\subsection{Exploratory Data Analysis}\label{eda} 
+
+Moving forward into our EDA phase, we limited our data evaluation to a subset of the entire dataset. Thus, we have analyzed and cross-referenced 7 different product category segments. These segments are: Apparel, Automotive, Baby, Beauty, Books (part 1 of 3), Camera, and Digital Software. Grant has successfully loaded and preprocessed the first three segments (Apparel, Automotive, Baby, Beauty, and Books) into his server using PowerShell. Kevin has successfully loaded the 6th and 7th segments (Camera and Digital Software, respectively) into R Studio. Initial EDA details for the Camera and Digital Software segments are shown in Figure~\ref{kev1} and Figure~\ref{kev2}, respectively. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=250pt]{../Figures/"Kevin1".png}\\
+	\vspace{0.04cm}
+	\caption{Data description of Camera category. Includes mean, median, mode, and quantiles of numeric data columns (\textit{star\_rating}, \textit{helpful\_votes}, and \textit{total\_votes}), as well as counts for binary attributes (\textit{vine} and \textit{verified\_purchase}).}
+	\vspace{0.01cm}
+	\label{kev1}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=250pt]{../Figures/"Kevin2".png}\\
+	\vspace{0.04cm}
+	\caption{Data description of Digital Software category. Includes mean, median, mode, and quantiles of numeric data columns (\textit{star\_rating}, \textit{helpful\_votes}, and \textit{total\_votes}), as well as counts for binary attributes (\textit{vine} and \textit{verified\_purchase}).}
+	\vspace{0.01cm}
+	\label{kev2}
+\end{figure} 
+
+Looking at the histograms in Figure~\ref{fig1}, we can see near identical distributions of customer id numbers connected to reviews. In addition, we can see that the product parents are also quite uniformly distributed. Moreover, looking at the start ratings of reviews, we see a significant number of five star reviews, much higher than any other rating, and generally exceeding the volume of all other star ratings combined. Traditionally, we see that nearly all reviews are verified purchases, and that the number of helpful votes are generally quite low, with only very few products getting many helpful review votes.
+
+Considering all seven product categories, we can see in Table I the total number of samples considered to be over 28 million, with the average per category being only 4 million. In addition, we see that the vast majority of products have 0 total or helpful votes, with 1 vote being the value of the 75th percentiles. In contrast, we see that the vast majority of reviews have a star rating of 5, with the 25th percentile being a star rating of 4. Note that the attribute \textit{star\_rating} represents a categorical integer of 1 through 5, while \textit{helpful\_votes} and \textit{total\_votes} are unbounded integers. 
+
+\begin{center}
+	\begin{table*}[!]
+		\centering \footnotesize
+		\vspace{0.01cm}
+		\caption{Shallow learning results on product category Apparel and Averaged across all category subsets (Apparel, Automotive, Baby, etc.).}
+		\hspace{1cm}
+		\begin{tabular}{c}
+			\includegraphics[width=0.98\textwidth]{../Figures/"table_fig".png}\\
+		\end{tabular}\newline
+		\vspace{-0.05cm}
+		\label{Table2}
+	\end{table*} \hfil
+\end{center} \vspace{-6mm}
+
+\subsection{Shallow Learning}
+
+%Now that our EDA phase is complete we have initiated steps to apply some basic machine learning techniques (decision trees, logistic regression, etc.) to fit our data. However, this process is ongoing and not complete as of yet. Currently, for categorical prediction, we must consider the input space of all our diverse attributes. Our goal in the short term is to demonstrate class prediction on \textit{star\_rating} based on the remaining information, as well as prediction of \textit{helpful\_votes}, which necessitates regression analysis.
+
+Once our EDA phase concluded we moved onto applying some shallow learning techniques to fit our data. Using the \textit{helpful\_votes}, \textit{star\_rating}, \textit{total\_votes}, \textit{verified\_purchase}, and \textit{vine} attributes each as target class values, we trained and tested K-Nearest Neighbor, Decision Tree (with Gini index and Entropy), Random Forest, and Naive Bayes models on the data, resulting in five tests for each algorithm. Here, our goal was to find the best performing algorithm to apply to our data. We tested all five of these models using all the remaining attributes (including those not mentioned as classes) as training data. For each of the attributes, we averaged out the accuracy metrics for each model and compared the results against the average for all of the attributes. Also note that the string attributes could not be used in this classification step, as none of the algorithms can take a string as a variable. 
+
+The learning algorithms were all implemented through use of the sciKi-learn \cite{sklearn} library. These algorithms include arguments for the variation and tuning of hyperparameters, such as equations for activation and decision making. In particular, K-Nearest Neighbor (KNN) classification utilizes a function of euclidean distance to determine the separation of the nearest neighbors of data items, classifying them into groups. Decision Tree (DT) is a quite effective classification mechanism that is also very efficient. In this examination, we tested both Gini index and Entropy functions as the splitting criterion to compare. The Random Forest (RF) algorithm creates a set of $n$ randomized decision trees and picks the best. Here we have set $n$ to 10. Finally, Naive Bayes (NB) is a statistical learning mechanism that operates based on probability distribution of the training data. 
+
+\begin{center}
+	\begin{table*}[!]
+		\centering \footnotesize
+		\vspace{0.01cm}
+		\caption{Shallow learning results on product category Baby and class value \textit{helpful\_votes} without (left) and with (right) Sentiment analysis using the top 500 words.}
+		\hspace{1cm}
+		\begin{tabular}{c}
+			\includegraphics[width=0.98\textwidth]{../Figures/"sent".png}\\
+		\end{tabular}\newline
+		\vspace{-0.05cm}
+		\label{Table3}
+	\end{table*} \hfil
+\end{center} \vspace{-6mm}
+
+\subsection{Modeling and Metrics}
+
+As the long-term goal of our project, we are interested in prediction the helpfulness of a review based on natural language analysis. This requires natural language model building and sentiment analysis of the \textit{review\_headline}, \textit{review\_body}, and \textit{product\_title} attributes before integration with our more basic predictive models for \textit{helpful\_votes} and \textit{star\_rating}. To accomplish this, we vectorized the string values from the noted attributes into one-hot or binary (present/absent) encoding, taking the highest-frequency words to reduce the overall size of the data matrix. It was necessary to reduce the number of words from which to apply learning algorithms, as the diversity of several million reviews produces near unfathomable individual words, making the width of the input matrix nearly equivalent to the length. Compared to our original dataset of only fifteen attributes, this is a significant departure and surely exceeds memory in application. In our particular experiments, we also note that we have only applied sentiment analysis through string segmentation, vectorization, and one-hot encoding for a single text attribute, namely \textit{review\_headline}. This is to reduce the overall dictionary size, as well as to reduce the calculations and demonstrate a proof of concept.
+
+As metrics for our experiment, we use the statistical measures of Accuracy, Precision, Recall, and F1-Score. Because we are using supervised learning to train our models, the ground truth values for each of our class values are known, and when we give our trained model unseen testing data, we can compare the model result with the ground truth. In this way, we derive four types of results, those are: True Positive ($TP$), False Positive ($FP$), True Negative ($TN$), and False Negative ($FN$). More specifically, a prediction will be labeled $TP$ if the correct positive class was assigned correctly as positive. Likewise a prediction is labeled as $FP$ if the predicted class was the positive class, but the ground truth was the negative class. So if the positive class is 1, then predicting 1 when the answer was 0 is an $FP$. It should be noted that this kind of statistical measurement is particularly well-suited to computing systems, as the number of variables become too large to calculate by hand for any person, especially in multivariate systems. 
+
+In fact, in multivariate systems, we look at each category in a class alone as the positive class. So for values 0, 1, and 2, we extract $TP$, $FP$, $TN$, $FN$, Precision, Recall and F1-Score values three times, setting 0, 1, and 2 each as the positive class and the other two as the negative. So, if 2 is positive, then 1 and 0 are negative, and $FP$ includes both 1 and 0 ground truth values predicted as 2. Thus, we derive 3 Precision, Recall, and F1-Score values and take the average of each. Also note that the overall Accuracy remains the same.
+
+Giving the definitions of $TP$, $FP$, $TN$ and $FN$, we now present Accuracy, Precision, Recall, and F1-Score as:
+\begin{equation}
+	\text{Accuracy} = \frac{TP + TN}{TP + FP + TN + FN}.
+\end{equation}
+\begin{equation}
+	\text{Precision} = \frac{TP}{FP + TP}.
+\end{equation}
+\begin{equation}
+	\text{Recall} = \frac{TP}{FN + TP}.
+\end{equation}
+\begin{equation}
+	\text{F1-Score}=\frac{2*(\text{Precision}* \text{Recall})}{\text{Precision}+\text{Recall}},
+\end{equation}
+
+\noindent Notice that F1-Score is defined as the harmonic average of precision and recall.
+
+\begin{figure*}[htb]
+	\centering
+	\includegraphics[width=0.98\textwidth]{../Figures/"list".png}\\
+	\vspace{0.04cm}
+	\caption{Attributes of the Baby + Sentiment (500) learning matrix. The top 500 words were selected as one-hot (0 or 1) attributes.}
+	\vspace{0.01cm}
+	\label{fig2}
+\end{figure*}
+
+\section{Results}
+
+Table~\ref{Table2} shows the results of the shallow learning for all five class values targeted, and for all algorithms attempted These are labeled as K-Nearest Neighbors (KNN-3) with the number of neighbors set at 3, Decision Tree with Gini index (DT-gini) and with Entropy (DT-entropy) as splitting mechanisms, Random Forest (RF-10) with 10 nodes, and Naive Bayes (NB-gaussian) using the Gaussian mechanism. 
+
+Notice that the Random Forest algorithm was immediately infeasible on this dataset. In Table~\ref{Table2} we have provided the results from the Apparel subset (left) as well as the Average of all data subsets combined (right) for comparison. At first glance, one can see that the \textit{star\_rating} attribute is quite difficult to predict when compared to the others. In the Apparel group, the highest accuracy rating across models was just 0.562. Compared to the \textit{helpful\_votes} attribute, with a high accuracy rating of 0.850, this number does indeed look quite low. Delving further into these results we can see a relative normalcy in accuracy, precision, recall, and f1-score results across product subsets (i.e. Apparel). Additionally, we can surmise that the Decision Trees with Entropy model resulted in the highest accuracy in most metrics for the \textit{helpful\_votes}, \textit{total\_votes}, \textit{verified\_purchase}, and \textit{vine} attributes (all but one attribute). That lonesome attribute, \textit{star\_rating}, was more likely to be predicted correctly by the Gaussian Naive Bayes model than Decision Trees with Entropy.
+
+What's more, looking at the \textit{helpful\_votes}, and \textit{total\_votes} classes, we see that the non-Decision Tree algorithms performed significantly worse (often by 10\% or more). Considering the very high accuracies of \textit{verified\_purchase} and \textit{vine}, we note several factors. First, considering the \textit{vine} attribute, this is described in the documentation as a promotion in which the now-defunct application Vine (a short-video capturing social media application for mobile devices) was used to add video attribution of the review. We can see from the data that this promotion was almost never taken advantage of, and such a high number of instances have a "N" or "not present" value that simple prediction of "N" is correct 99.99\% of the time. Second, considering the \textit{verified\_purchase} attribute, referring back to Figure~\ref{fig1}, we can see that this is a binary category as well, with values "Y" and "N". Looking at the figure, we note that, in general, there are significantly more "Y" values than "N" values, and that the approximate split is 85\% "Y" values. Looking back at our evaluation results in Table~\ref{Table2}, we see strong accuracy scores of ranging from 82\% to 90\%. We can thus surmise that our data does not have enough attributes to better identify this class, as having so many instances provide a more than adequate sample population. 
+
+In the second part of our experiment, we have cleaned and segmented the textual data of the \textit{review\_headline} attribute, encoding individual words into a library attribute list, and encoding binary values of 1 (present) and 0 (not present) for each word in a particular data instance. The result is a massively larger matrix mostly populated with these binary values. For this experiment, we have attempted to apply all of the prior algorithms used, and have varied the maximum number of words in the library to limit the matrix size. Our first observation is that the Naive Bayes algorithm no longer can support execution on our system, exceeding memory when attempted. To further reduce the computational overhead, we have considered the smallest of our product category subsets, Baby, with only 1.75 million instances. Maintaining a training ration of 70\%, this yields a test set of only 5.25 thousand. 
+
+In Table~\ref{Table3} we can see the results of adding sentiment analysis to our existing classification mechanisms. As we can see from the table, the results are a quite astounding. Note that the top 500 words were used in the sentiment section of the attributes, and can be found in Figure~\ref{fig2}. The results for the K-Nearest Neighbors algorithm are exactly the same, with or without the additional data. In contrast, the decision tree algorithm approaches 100\% accuracy \textit{helpful\_votes} and \textit{total\_votes}, and actually achieves it in \textit{star\_rating}, \textit{verified\_purchase}, and \textit{vine}. Given these results there are several potential explanations. The first is that something wrong has occurred, and this is certainly the immediate reaction. However, review of the code and the multiple variations of the classes and algorithms lead us to believe this is not the case. Instead, it may be possible that there are several quite strong indicators within the text of the \textit{review\_headline} that highly influence the result. This can clearly be explained for star rating, as many review headlines simply state "Five Stars", and the numbers "five","four", "three", "two", and "one" all appear in the list of attributes. This is more difficult to clearly surmise in the case of verified purchase and vine. Moreover, we note that \textit{helpful\_votes} does not reach 100\% accuracy, and it is not clear what its relation is to \textit{star\_rating} or the other attributes. It seems highly likely that some combinations of the words in the attribute list highly influence the perceived helpfulness of the review.
+
+\section{Literature Review}
+
+In this section we review some relevant works to our current research project. Specifically, Diaz and Ng \cite{ocampo} provided an overview of relevant works on making predictions of helpful reviews. They stress the importance of context in understand the reviews. Also, they mention a lack of uniformity among approaches for predicting helpfulness which hindered their ability to compare methods. That being said, the authors specifically mention a few advance models such as probabilistic matrix factorization and HMM-LDA as well as neural networks as exciting prospects for predicting customer reviews.
+
+In addition, Martin \cite{master} in her 2017 unpublished masters thesis explored review text analysis in predicting review ratings. She cites differing user standards as a major hindrance to this method along with anecdotal information and differing vocabulary that users may use. Martin looked at two different Amazon datasets from distinct categories and first used binary classification to predict a “high” or “low” rating. In addition, the author attempted to find a more exact prediction using multi-class classification and logistic regression. Also, she trained and tested Naive Bayes, SVM, and Random Forest classifiers. Martin found SVM and Naive Bayes to be the most successful classifiers but noted that the binary classification also performed quite well for the other product category. Her conclusions were mixed due to differing results across product categories.
+
+Finally, Park \cite{Yoon} analyzed aspects of product reviews across five categories and looked at their relevance to review helpfulness. The author then used four mining methods to find the best predictor for each product type. Park found that product differences mean algorithms need to be different across product categories. The author also concluded that the vector regression method was the most accurate predictor for each of the five categories.
+
+\vspace{-0.01cm}
+\section{Conclusion}\label{conclusion}
+\vspace{-0.01cm}
+
+In this work, we have considered the application of shallow machine learning algorithms to Amazon product review data. As we have observed previously, the Decision Tree algorithm is particularly powerful, though it generally is not the ideal candidate for all situations. In considering first the categorical data alone, we have achieved well over 80\% in accuracy and F1-score in predicting the number of helpful votes for a particular review. With the addition of text-based attributes cleaned and extracted from the review headlines, we can predict the helpful votes of a review with near-exact accuracy, precision, recall, and F1. While these results need to be corroborated, this is an impressive result.
+
+\bibliographystyle{abbrv}
+\vspace{-0.01cm}
+\bibliography{ref}
+
+\end{document}
