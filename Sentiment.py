@@ -320,7 +320,7 @@ for cats in data:
         text_file.write("\n")
         text_file.write(str(metrics.classification_report(testCls, rf_pred)))
         text_file.write("\n")
-        '''
+        
         
         
         # ---- Naive Bayes Classifier
@@ -342,7 +342,7 @@ for cats in data:
         text_file.write("\n")
         text_file.write(str(metrics.classification_report(testCls, nb_pred)))
         text_file.write("\n")
-        
+        '''
 
 
     print(cats + " Done")
