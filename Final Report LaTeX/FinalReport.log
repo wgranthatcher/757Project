@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  6 DEC 2018 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  7 DEC 2018 11:26
 entering extended mode
 **./FinalReport.tex
 (FinalReport.tex
@@ -1285,11 +1285,11 @@ Overfull \hbox (1.6778pt too wide) in paragraph at lines 198--204
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 216.
 
-<../Figures/"sent".png, id=69, 692.8284pt x 347.3778pt>
-File: ../Figures/"sent".png Graphic file (type png)
-<use ../Figures/"sent".png>
-Package pdftex.def Info: ../Figures/"sent".png  used on input line 222. on inpu
-t line 222.
+<../Figures/"sent_re".png, id=69, 692.8284pt x 347.3778pt>
+File: ../Figures/"sent_re".png Graphic file (type png)
+<use ../Figures/"sent_re".png>
+Package pdftex.def Info: ../Figures/"sent_re".png  used on input line 222. on i
+nput line 222.
 Package pdftex.def Info: Requested size: 505.6778pt x 253.54659pt on input line
  222.
 
@@ -1311,7 +1311,15 @@ Package pdftex.def Info: Requested size: 505.6778pt x 221.4013pt on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <../Figures/sent.png>] [6 <../Figures/list.png>] (FinalReport.bbl
+ [5 <../Figures/sent_re.png>]
+Underfull \hbox (badness 8019) in paragraph at lines 274--275
+[]\T1/ptm/m/n/10 Considering the high per-for-mance in-crease in the
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <../Figures/list.png>] (FinalReport.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 22--28
 []\T1/ptm/m/n/8 J. Des-jardins.  The ex-traor-di-nary size of ama-zon in one
  []
@@ -1340,28 +1348,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7
-
-] (FinalReport.aux) ) 
+[7] (FinalReport.aux) ) 
 Here is how much of TeX's memory you used:
  9445 strings out of 493312
- 162048 string characters out of 3125475
+ 162168 string characters out of 3125475
  247681 words of memory out of 3000000
  12797 multiletter control sequences out of 15000+200000
  111859 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,12n,96p,1692b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/William Hatcher/AppData/Local/Programs/MiKTeX 2.
-9/fonts/enc/dvips/base/8r.enc}<C:/Users/William Hatcher/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/William Hatcher/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Users/William Hatcher/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/William Hatcher/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/urw/times/utmb8a.pfb><C:/Users/William Hatcher/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/William Hatcher/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/William
- Hatcher/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on FinalReport.pdf (7 pages, 1347357 bytes).
+ 61i,12n,96p,1698b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/William Hatcher/AppData/Local/Programs/MiKTeX 
+2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/William Hatcher/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/William Hatche
+r/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/William Hatcher/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Users/William Hatcher/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/William Hatcher/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/William Hatcher/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Willi
+am Hatcher/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+
+Output written on FinalReport.pdf (7 pages, 1353232 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
