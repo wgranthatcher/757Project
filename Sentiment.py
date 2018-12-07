@@ -214,7 +214,7 @@ for cats in data:
         print("B: ")
         print(b)
         
-        #obs_bin.remove(str(b))
+        obs_bin.remove(str(b))
         #print("Obs_Bin")
         #print(obs_bin)
 
